@@ -1,6 +1,12 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
 
-public class Hideout : MonoBehaviour
+public class Hideout : Node
 {
-	public HideoutType type;
+	public HideoutType Type;
+
+	public override void OnDrawGizmos ()
+	{
+		Handles.Label (transform.position, Type.ToString ());
+		base.OnDrawGizmos ();
+	}
 }
