@@ -6,12 +6,17 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("Bullet")]
+    [Header("Shooting")]
     public GameObject BulletPrefab;
-    
+    public Transform TargetTransform;
+
+    public float ShootCooldown = 0.5f;
+
+    private float _shootTimer;
     
     private Rigidbody2D _rigidBody2D;
     private Vector2 _movement = Vector2.zero;
+    private Vector2 _targetMovement = Vector2.zero;
 
     private Vector2 _velocity = Vector2.zero;
     private float _smoothTime = .5f;
@@ -24,9 +29,22 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         _movement.x = Input.GetAxis("Horizontal");
-        _movement.y = Input.GetAxis("Vertical");   
+        _movement.y = Input.GetAxis("Vertical");
+
+        TargetTransform.position = transform.position + new Vector3(Input.GetAxis("TargetHorizontal"), Input.GetAxis("TargetVertical"));
         
-        //if (Input.GetButton("Fire1"))
+        _shootTimer -= Time.deltaTime;
+        if (Input.GetButton("Fire1") && _shootTimer < ShootCooldown)
+        {
+            _shootTimer = ShootCooldown;
+            Shoot();
+        }
+    }
+
+    private void Shoot()
+    {
+        GameObject bullet = Instantiate(BulletPrefab, TargetTransform.position, Quaternion.identity);
+        bullet.transform.forward = TargetTransform.localPosition;
     }
 
     private void FixedUpdate()
