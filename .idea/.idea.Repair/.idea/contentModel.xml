@@ -21,9 +21,15 @@
         <e p="Scripts" t="Include">
           <e p="BlackStripes.cs" t="Include" />
           <e p="CameraSmoothFollow.cs" t="Include" />
-          <e p="Player" t="Include">
-            <e p="Bullet.cs" t="Include" />
-            <e p="PlayerController.cs" t="Include" />
+          <e p="Game" t="Include">
+            <e p="GameController.cs" t="Include" />
+            <e p="MiniGames" t="Include">
+              <e p="MiniGameManager.cs" t="Include" />
+            </e>
+            <e p="Player" t="Include">
+              <e p="Bullet.cs" t="Include" />
+              <e p="PlayerController.cs" t="Include" />
+            </e>
           </e>
           <e p="PropsBehaviour" t="Include">
             <e p="FSMBaseClasses" t="Include">
@@ -33,22 +39,37 @@
               <e p="Transition.cs" t="Include" />
             </e>
             <e p="Microwave.cs" t="Include" />
+            <e p="PathfindingSystem" t="Include">
+              <e p="Hideout.cs" t="Include" />
+              <e p="HideoutType.cs" t="Include" />
+              <e p="Room.cs" t="Include" />
+            </e>
             <e p="Prop.cs" t="Include" />
             <e p="States" t="Include">
+              <e p="StateCaught.cs" t="Include" />
               <e p="StateHidden.cs" t="Include" />
               <e p="StateHiding.cs" t="Include" />
               <e p="StateRevealing.cs" t="Include" />
             </e>
           </e>
           <e p="UI" t="Include">
-            <e p="TicTacToe" t="Include">
-              <e p="TicTacToe.cs" t="Include" />
-              <e p="TicTacToeButton.cs" t="Include" />
-              <e p="TicTacToeSetup.cs" t="Include" />
-              <e p="TicTacToeSymbol.cs" t="Include" />
+            <e p="MiniGames" t="Include">
+              <e p="MiniGameUI.cs" t="Include" />
+              <e p="Simon" t="Include">
+                <e p="Simon.cs" t="Include" />
+                <e p="SimonButton.cs" t="Include" />
+                <e p="SimonColor.cs" t="Include" />
+              </e>
+              <e p="TicTacToe" t="Include">
+                <e p="TicTacToe.cs" t="Include" />
+                <e p="TicTacToeButton.cs" t="Include" />
+                <e p="TicTacToeSetup.cs" t="Include" />
+                <e p="TicTacToeSymbol.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="Utils" t="Include">
+            <e p="NearestObjectGetter.cs" t="Include" />
             <e p="Pool" t="Include">
               <e p="IPoolable.cs" t="Include" />
               <e p="ObjectPool.cs" t="Include" />

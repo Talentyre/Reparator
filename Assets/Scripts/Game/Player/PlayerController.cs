@@ -19,10 +19,12 @@ public class PlayerController : MonoBehaviour
     private Vector2 _velocity = Vector2.zero;
     private Vector3 _targetPosition;
     private bool _controlsActivated = true;
+    private Collider2D _collider2D;
 
 
     void Start()
     {
+        _collider2D = GetComponent<Collider2D>();
         _rigidBody2D = GetComponent<Rigidbody2D>();
 		Prop.SawByPlayer += DeactivateControls;
 		Prop.Revealed += ActivateControls;
@@ -60,6 +62,8 @@ public class PlayerController : MonoBehaviour
 
     public void DeactivateControls()
     {
+        _collider2D.isTrigger = false;
+        
         _controlsActivated = false;
 		_rigidBody2D.velocity = Vector2.zero;
 		_movement = Vector2.zero;
@@ -67,6 +71,8 @@ public class PlayerController : MonoBehaviour
     
     public void ActivateControls()
     {
+        _collider2D.isTrigger = true;
+        
         _controlsActivated = true;
     }
     

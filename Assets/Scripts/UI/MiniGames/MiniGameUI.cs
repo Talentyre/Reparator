@@ -42,7 +42,11 @@ public class MiniGameUI : MonoBehaviour
 
         StartTimer -= Time.deltaTime;
         if (StartTimer > 0)
+        {
+            OnStart();
             return;
+        }
+
         
         
         if (_currentTimer <= 0)
@@ -58,6 +62,11 @@ public class MiniGameUI : MonoBehaviour
             WarningImage.transform.DOShakePosition(0.25f, 5f,30).SetLoops(-1);
         }
         TimerSlider.value = _currentTimer / Timer;
+    }
+
+    protected virtual void OnStart()
+    {
+        
     }
 
     protected void OnWin()
