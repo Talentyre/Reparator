@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
 
         TargetTransform.position = transform.position + new Vector3(Input.GetAxis("TargetHorizontal"), Input.GetAxis("TargetVertical"));
         
+        Debug.Log(_movement);
+        Debug.Log("Target = "+Input.GetAxis("TargetHorizontal"));
+        
         _shootTimer -= Time.deltaTime;
         if (Input.GetButton("Fire1") && _shootTimer < ShootCooldown)
         {
