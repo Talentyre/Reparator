@@ -6,7 +6,7 @@ public class Room : MonoBehaviour
 	[Header ("Open Context Menu to get Hideouts")]
 	public Hideout[] Hideouts;
 
-	public Hideout GetHideoutOfType (HideoutType type)
+	public Hideout GetRandomHideoutOfType (HideoutType type)
 	{
 		List<Hideout> hideouts = new List<Hideout> ();
 		foreach (var h in Hideouts)

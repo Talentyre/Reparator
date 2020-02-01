@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class AStarMesh : MonoBehaviour
 {
+	[Header ("Open Context Menu to get rooms")]
+	public Room[] Rooms;
 	[Header ("Open Context Menu to generate mesh")]
 	public Node[] Mesh;
 
@@ -10,6 +12,30 @@ public class AStarMesh : MonoBehaviour
 	void GenerateMesh ()
 	{
 		Mesh = FindObjectsOfType<Node> ();
+	}
+	[ContextMenu ("Get Rooms")]
+	void GetRooms ()
+	{
+		Rooms = FindObjectsOfType<Room> ();
+	}
+
+	public List<Node> GetRandomPathToHideout (Node currentNode, Room currentRoom, HideoutType type)
+	{
+		List<Node> hideouts = new List<Node> ();
+		while (hideouts.Count < 3)
+		{
+			Room r = Rooms [Random.Range (0, Rooms.Length)];
+			if (r == currentRoom)
+				continue;
+
+			Node h = r.GetRandomHideoutOfType (type);
+			if (hideouts.Contains (h))
+				continue;
+
+			hideouts.Add (h);
+		}
+
+		return FindPath (currentNode, hideouts[Random.Range (0, 3)]);
 	}
 
 	List<Node> Retrace (Node start, Node end)
@@ -23,11 +49,12 @@ public class AStarMesh : MonoBehaviour
 			currentNode = currentNode.Parent;
 		}
 
+		path.Add (start);
 		path.Reverse ();
 		return path;
 	}
 
-	public List<Node> FindPath (Node start, Node end)
+	List<Node> FindPath (Node start, Node end)
 	{
 		List<Node> openSet = new List<Node> ();
 		HashSet<Node> closedSet = new HashSet<Node> ();
@@ -52,11 +79,11 @@ public class AStarMesh : MonoBehaviour
 				if (closedSet.Contains (neighbour))
 					continue;
 
-				float costToNeighbour = currentNode.Cost + Vector3.SqrMagnitude (currentNode.transform.position - neighbour.transform.position);
+				float costToNeighbour = currentNode.Cost + Vector3.SqrMagnitude (currentNode.Position - neighbour.Position);
 				if (costToNeighbour < neighbour.Cost || !openSet.Contains (neighbour))
 				{
 					neighbour.Cost = costToNeighbour;
-					neighbour.Heuristic = Vector3.SqrMagnitude (neighbour.transform.position - end.transform.position);
+					neighbour.Heuristic = Vector3.SqrMagnitude (neighbour.Position - end.Position);
 					neighbour.Parent = currentNode;
 
 					if (!openSet.Contains (neighbour))

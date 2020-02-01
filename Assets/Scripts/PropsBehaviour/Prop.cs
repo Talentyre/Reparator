@@ -19,9 +19,11 @@ public abstract class Prop : MonoBehaviour
 	[SerializeField] float _moveSpeed = 5;
 	[SerializeField] float _playerRevealDistance = 2;
 	[SerializeField] float _bulletInstantRevealDistance = 1;
+	public HideoutType HideoutType = HideoutType.NA;
 
 	[Header ("Pathfinding")]
-	[SerializeField] Room _currentRoom = null;
+	public Room CurrentRoom = null;
+	public Hideout CurrentHideout = null;
 
 	void OnBulletHitCollider (Collider2D[] nearHitProps, Transform nearest, Vector2 hitPosition)
 	{
@@ -55,7 +57,7 @@ public abstract class Prop : MonoBehaviour
 
 		StateCaught caught = new StateCaught (this);
 		caught.AddTransition(Transition.MiniGameLost, StateID.Hiding);
-		
+		 
 		_fsm = new FSMSystem (hidden, revealing, hiding);
 	}
 
@@ -99,8 +101,12 @@ public abstract class Prop : MonoBehaviour
 		_player = FindObjectOfType<PlayerController> ().transform;
 		Bullet.HitCollider += OnBulletHitCollider;
 
-		if (_currentRoom == null)
-			Debug.LogWarning ("(Prop) CurrentRoom var is null", gameObject);
+		if (HideoutType == HideoutType.NA)
+			Debug.LogWarning ("(Prop) NA Hideout type is not allowed.", gameObject);
+		if (CurrentRoom == null)
+			Debug.LogWarning ("(Prop) CurrentRoom var is null.", gameObject);
+		if (CurrentHideout == null)
+			Debug.LogWarning ("(Prop) CurrentHideout var is null.", gameObject);
 
 		MakeFSM ();
 	}

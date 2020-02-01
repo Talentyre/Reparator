@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     public static GameController Instance;
 
     [Header("Player")] public PlayerController PlayerController;
+	[Header ("A* Mesh")] public AStarMesh AStarMesh;
 
     // todo maybe put this in a specific UI class
     [Header("UI")] public Text PropCountText;
@@ -18,8 +19,20 @@ public class GameController : MonoBehaviour
     private MiniGameManager _miniGameManager;
     private int _propCount;
     private int _totalPropCount = 10;
-    
-    void Start()
+
+	private void Awake ()
+	{
+		if (Instance != null)
+		{
+			DestroyImmediate (gameObject);
+			return;
+		}
+
+		Instance = this;
+		//DontDestroyOnLoad (gameObject);
+	}
+
+	void Start()
     {
         _miniGameManager = GetComponent<MiniGameManager>();
         
