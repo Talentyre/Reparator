@@ -39,12 +39,19 @@ public class PlayerController : MonoBehaviour
         _movement.x = Input.GetAxis("Horizontal");
         _movement.y = Input.GetAxis("Vertical");
 
-        _targetPosition = new Vector3(Input.GetAxis("TargetHorizontal"), Input.GetAxis("TargetVertical"));
+        var screenToWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        _targetPosition = (new Vector3(screenToWorldPoint.x, screenToWorldPoint.y) - transform.position).normalized * 2;
+        
+        
+        if (Math.Abs(Input.GetAxis("TargetHorizontal")) > 0.001f || Math.Abs(Input.GetAxis("TargetVertical")) > 0.001f)
+            _targetPosition = new Vector3(Input.GetAxis("TargetHorizontal"), Input.GetAxis("TargetVertical"));
+        
+        
         TargetTransform.position = transform.position + _targetPosition;
 
         _shootTimer += Time.deltaTime;
 
-        if (Input.GetAxis("Shoot") < 0 && _shootTimer > ShootCooldown)
+        if ((Input.GetAxis("Shoot") < 0 || Input.GetButton("Shoot")) && _shootTimer > ShootCooldown)
         {
             _shootTimer = 0;
             Shoot();
