@@ -54,6 +54,8 @@ public abstract class FSMState
 	public virtual void DoBeforeEntering () { }
 	public virtual void DoBeforeLeaving () { }
 
+	public virtual void OnShot () { }
+
 	public abstract void Reason (Transform player, Transform npc);
 	public abstract void Act (Transform player, Transform npc);
 }

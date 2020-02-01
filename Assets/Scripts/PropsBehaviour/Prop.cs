@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Linq;
 
 public abstract class Prop : MonoBehaviour
 {
@@ -11,9 +12,29 @@ public abstract class Prop : MonoBehaviour
 	Transform m_Transform;
 	Transform _player;
 
+	[Header ("References")]
 	[SerializeField] Animator _animator = null;
+
+	[Header ("Stats")]
 	[SerializeField] float _moveSpeed = 5;
-	[SerializeField] float _revealDistance = 2;
+	[SerializeField] float _playerRevealDistance = 2;
+	[SerializeField] float _bulletInstantRevealDistance = 1;
+
+	[Header ("Pathfinding")]
+	[SerializeField] Room _currentRoom = null;
+
+	void OnBulletHitCollider (Collider2D[] nearHitProps, Transform nearest, Vector2 hitPosition)
+	{
+		if (nearest.TryGetComponent (out Prop nearestProp) && nearestProp == this)
+		{
+			OnShot ();
+			return;
+		}
+
+		foreach (var prop in nearHitProps)
+			if (prop.TryGetComponent (out Prop p))
+				p.OnNearShot (hitPosition);
+	}
 
 	public void SetTransition (Transition transition)
 	{
@@ -22,8 +43,9 @@ public abstract class Prop : MonoBehaviour
 
 	void MakeFSM ()
 	{
-		StateHidden hidden = new StateHidden (this, _revealDistance);
+		StateHidden hidden = new StateHidden (this, _playerRevealDistance, _bulletInstantRevealDistance);
 		hidden.AddTransition (Transition.SawByPlayer, StateID.Revealing);
+		hidden.AddTransition (Transition.Revealed, StateID.Hiding);
 
 		StateRevealing revealing = new StateRevealing (this);
 		revealing.AddTransition (Transition.Revealed, StateID.Hiding);
@@ -34,13 +56,35 @@ public abstract class Prop : MonoBehaviour
 		_fsm = new FSMSystem (hidden, revealing, hiding);
 	}
 
-	public virtual void OnSawByPlayer ()
+	public void OnNearShot (Vector2 shootPosition)
 	{
-		_animator.SetTrigger ("Reveal");
-		SawByPlayer?.Invoke ();
+		if (!(_fsm.CurrentState is StateHidden))
+			return;
+
+		Unhide (Vector2.Distance (shootPosition, transform.position) >= _bulletInstantRevealDistance);
 	}
 
-	public virtual void OnRevealed ()
+	public void OnShot ()
+	{
+		_fsm.CurrentState.OnShot ();
+	}
+
+	public virtual void Unhide (bool instantly)
+	{
+		if (instantly)
+		{
+			SetTransition (Transition.SawByPlayer);
+			SawByPlayer?.Invoke ();
+			_animator.SetTrigger ("Unhide");
+		}
+		else
+		{
+			SetTransition (Transition.Revealed);
+			Revealed?.Invoke ();
+		}
+	}
+
+	public virtual void Reveal ()
 	{
 		SetTransition (Transition.Revealed);
 		Revealed?.Invoke ();
@@ -50,6 +94,10 @@ public abstract class Prop : MonoBehaviour
 	{
 		m_Transform = transform;
 		_player = FindObjectOfType<PlayerController> ().transform;
+		Bullet.HitCollider += OnBulletHitCollider;
+
+		if (_currentRoom == null)
+			Debug.LogWarning ("(Prop) CurrentRoom var is null", gameObject);
 
 		MakeFSM ();
 	}
@@ -63,6 +111,6 @@ public abstract class Prop : MonoBehaviour
 	void OnDrawGizmos ()
 	{
 		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireSphere (transform.position, _revealDistance);
+		Gizmos.DrawWireSphere (transform.position, _playerRevealDistance);
 	}
 }

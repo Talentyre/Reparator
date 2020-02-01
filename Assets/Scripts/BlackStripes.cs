@@ -2,7 +2,7 @@
 
 public class BlackStripes : MonoBehaviour
 {
-	[SerializeField] Animator _animator;
+	[SerializeField] Animator _animator = null;
 
 	void Awake ()
 	{
@@ -12,11 +12,11 @@ public class BlackStripes : MonoBehaviour
 
 	void OnPropRevealed ()
 	{
-		_animator.SetTrigger ("In");
+		_animator.SetTrigger ("Out");
 	}
 
 	void OnPropSawByPlayer ()
 	{
-		_animator.SetTrigger ("Out");
+		_animator.SetTrigger ("In");
 	}
 }

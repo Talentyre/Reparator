@@ -12,6 +12,11 @@ public class StateHiding : FSMState
 		_moveSpeed = moveSpeed;
 	}
 
+	public override void OnShot ()
+	{
+		Debug.Log ("Getting shot while running away.");
+	}
+
 	public override void Act (Transform player, Transform npc)
 	{
 		Debug.Log ("Running away.");
