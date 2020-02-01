@@ -2118,6 +2118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MiniGames:
   - {fileID: 3825293019076861380, guid: b41a3787d91948749bf01876f1bbdee5, type: 3}
+  - {fileID: 3825293019813450259, guid: 2856909c4060983408d00dd5e937c83f, type: 3}
 --- !u!4 &1975887167
 Transform:
   m_ObjectHideFlags: 0
