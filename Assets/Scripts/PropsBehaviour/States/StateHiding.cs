@@ -29,4 +29,11 @@ public class StateHiding : FSMState
 		//    checker si le joueur est proche ou non
 		//    se cacher ou non etc
 	}
+
+	public override void OnTriggerEnter2D(Collider2D collider2D)
+	{
+		base.OnTriggerEnter2D(collider2D);
+
+		GameController.Instance.SpawnMiniGame(_prop);
+	}
 }

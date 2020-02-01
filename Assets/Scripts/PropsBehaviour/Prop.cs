@@ -53,6 +53,9 @@ public abstract class Prop : MonoBehaviour
 		StateHiding hiding = new StateHiding (this, _moveSpeed);
 		hiding.AddTransition (Transition.FoundHideout, StateID.Hidden);
 
+		StateCaught caught = new StateCaught (this);
+		caught.AddTransition(Transition.MiniGameLost, StateID.Hiding);
+		
 		_fsm = new FSMSystem (hidden, revealing, hiding);
 	}
 
@@ -112,5 +115,10 @@ public abstract class Prop : MonoBehaviour
 	{
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireSphere (transform.position, _playerRevealDistance);
+	}
+
+	public void OnDead()
+	{
+		// TODO death anim, sprite and so on...
 	}
 }

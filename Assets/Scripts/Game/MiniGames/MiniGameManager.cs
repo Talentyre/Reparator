@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MiniGameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<MiniGameUI> MiniGames = new List<MiniGameUI>();
+    private List<MiniGameUI> _usedMiniGames = new List<MiniGameUI>();
+    
 
-    // Update is called once per frame
-    void Update()
+    public MiniGameUI SpawnRandomMiniGame()
     {
+        if (_usedMiniGames.Count >= MiniGames.Count)
+            _usedMiniGames.Clear();
+        var availableMiniGames = MiniGames.Where(m => !_usedMiniGames.Contains(m)).ToList();
+        var pickedMiniGame = availableMiniGames[Random.Range(0, availableMiniGames.Count())];
+        _usedMiniGames.Add(pickedMiniGame);
         
+        return Instantiate(pickedMiniGame);
     }
 }

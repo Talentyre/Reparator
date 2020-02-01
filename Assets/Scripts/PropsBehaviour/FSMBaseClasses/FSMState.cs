@@ -54,6 +54,8 @@ public abstract class FSMState
 	public virtual void DoBeforeEntering () { }
 	public virtual void DoBeforeLeaving () { }
 
+	public virtual void OnTriggerEnter2D(Collider2D collider2D){}
+
 	public virtual void OnShot () { }
 
 	public abstract void Reason (Transform player, Transform npc);

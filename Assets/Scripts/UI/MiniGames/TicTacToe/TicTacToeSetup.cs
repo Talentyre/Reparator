@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TicTacToeSetup : MonoBehaviour
+public class TicTacToeSetup
 {
     public TicTacToeSymbol[,] Board;
     public Vector2 CorrectPosition;
