@@ -6,15 +6,23 @@
     <e p="C:\Users\ccorvizi\Desktop\Repair" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="PropsBehaviour" t="Include">
-          <e p="FSMState.cs" t="Include" />
-          <e p="FSMSystem.cs" t="Include" />
-          <e p="StateID.cs" t="Include" />
-          <e p="Transition.cs" t="Include" />
-        </e>
         <e p="Scripts" t="Include">
-          <e p="Bullet.cs" t="Include" />
-          <e p="PlayerController.cs" t="Include" />
+          <e p="Player" t="Include">
+            <e p="Bullet.cs" t="Include" />
+            <e p="PlayerController.cs" t="Include" />
+          </e>
+          <e p="PropsBehaviour" t="Include">
+            <e p="FSMState.cs" t="Include" />
+            <e p="FSMSystem.cs" t="Include" />
+            <e p="StateID.cs" t="Include" />
+            <e p="Transition.cs" t="Include" />
+          </e>
+          <e p="Utils" t="Include">
+            <e p="Pool" t="Include">
+              <e p="IPoolable.cs" t="Include" />
+              <e p="ObjectPool.cs" t="Include" />
+            </e>
+          </e>
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

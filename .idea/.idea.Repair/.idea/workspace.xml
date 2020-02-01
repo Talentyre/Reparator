@@ -11,8 +11,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/Pool/IPoolable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/Pool/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -21,6 +23,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Test.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/ObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Pool/IPoolable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Pool/ObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -74,7 +81,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580497219298</updated>
-      <workItem from="1580497223102" duration="5813000" />
+      <workItem from="1580497223102" duration="7560000" />
     </task>
     <servers />
   </component>

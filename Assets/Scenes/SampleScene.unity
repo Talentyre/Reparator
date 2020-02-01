@@ -150,9 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63721dcc32eb5ef429fd918a8b1fb6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 2784149204486177776, guid: c07c63f782ae99748be5ec4054425cf9,
-    type: 3}
   TargetTransform: {fileID: 123170767}
+  BulletPool: {fileID: 123170769}
   ShootCooldown: 0.5
 --- !u!50 &97179425
 Rigidbody2D:
@@ -184,7 +183,7 @@ Transform:
   m_GameObject: {fileID: 97179422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 123170767}
   - {fileID: 745435800}
@@ -201,6 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 123170767}
   - component: {fileID: 123170768}
+  - component: {fileID: 123170769}
   m_Layer: 0
   m_Name: TargetSprite
   m_TagString: Untagged
@@ -271,6 +271,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &123170769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123170766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d73fde2d7e9224899a9106cee1eaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 4306168395010046106, guid: c07c63f782ae99748be5ec4054425cf9, type: 3}
+  PoolAmount: 300
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

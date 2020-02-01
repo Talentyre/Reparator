@@ -7,20 +7,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Shooting")]
-    public GameObject BulletPrefab;
     public Transform TargetTransform;
-
+    public ObjectPool BulletPool;
     public float ShootCooldown = 0.5f;
 
     private float _shootTimer;
     
     private Rigidbody2D _rigidBody2D;
     private Vector2 _movement = Vector2.zero;
-    private Vector2 _targetMovement = Vector2.zero;
 
     private Vector2 _velocity = Vector2.zero;
     private float _smoothTime = .5f;
+    private Vector3 _targetPosition;
     
+
     void Start()
     {
         _rigidBody2D = GetComponent<Rigidbody2D>();
@@ -31,13 +31,13 @@ public class PlayerController : MonoBehaviour
         _movement.x = Input.GetAxis("Horizontal");
         _movement.y = Input.GetAxis("Vertical");
 
-        TargetTransform.position = transform.position + new Vector3(Input.GetAxis("TargetHorizontal"), Input.GetAxis("TargetVertical"));
-        
-        Debug.Log(_movement);
-        Debug.Log("Target = "+Input.GetAxis("TargetHorizontal"));
+        _targetPosition = new Vector3(Input.GetAxis("TargetHorizontal"), Input.GetAxis("TargetVertical"));
+        TargetTransform.position = transform.position + _targetPosition;
         
         _shootTimer -= Time.deltaTime;
-        if (Input.GetButton("Fire1") && _shootTimer < ShootCooldown)
+        
+        Debug.Log(Input.GetAxis("Shoot"));
+        if (Input.GetAxis("Shoot") < 0 && _shootTimer < ShootCooldown)
         {
             _shootTimer = ShootCooldown;
             Shoot();
@@ -46,8 +46,9 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject bullet = Instantiate(BulletPrefab, TargetTransform.position, Quaternion.identity);
-        bullet.transform.forward = TargetTransform.localPosition;
+        var bullet = BulletPool.GetObject();
+        bullet.transform.position = TargetTransform.position;
+        bullet.GetComponent<Bullet>().Direction = _targetPosition;
     }
 
     private void FixedUpdate()
