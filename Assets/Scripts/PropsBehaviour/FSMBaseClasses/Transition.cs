@@ -2,6 +2,6 @@
 {
 	NA = 0,
 	SawByPlayer = 1,
-	OutOfHide = 2,
+	Revealed = 2,
 	FoundHideout = 3
 }

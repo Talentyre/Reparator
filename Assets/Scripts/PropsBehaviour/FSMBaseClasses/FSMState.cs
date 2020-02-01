@@ -54,6 +54,6 @@ public abstract class FSMState
 	public virtual void DoBeforeEntering () { }
 	public virtual void DoBeforeLeaving () { }
 
-	public abstract void Reason (GameObject player, GameObject npc);
-	public abstract void Act (GameObject player, GameObject npc);
+	public abstract void Reason (Transform player, Transform npc);
+	public abstract void Act (Transform player, Transform npc);
 }

@@ -2,6 +2,6 @@
 {
 	NA = 0,
 	Hidden = 1,
-	GoingOutOfHide = 2,
-	LookingForHideout = 3
+	Revealing = 2,
+	Hiding = 3
 }
