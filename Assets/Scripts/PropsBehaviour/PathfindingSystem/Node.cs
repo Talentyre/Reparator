@@ -20,6 +20,13 @@ public class Node : MonoBehaviour
 		Transform = transform;
 	}
 
+	public void ResetNode ()
+	{
+		Parent = null;
+		Cost = 0;
+		Heuristic = 0;
+	}
+
 	[ContextMenu ("Get Near Neighbours")]
 	void GetNeighbours ()
 	{

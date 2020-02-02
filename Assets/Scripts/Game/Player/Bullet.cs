@@ -13,6 +13,7 @@ public class Bullet : IPoolable
 
 	public LayerMask HitLayerMask;
 	public Transform Visual;
+	public GameObject OnDestroyedVFX;
 
     private float _lifeTimer;
 
@@ -40,6 +41,8 @@ public class Bullet : IPoolable
 	{
 		var nearProps = Physics2D.OverlapCircleAll (transform.position, HitRadius, HitLayerMask);
 		HitCollider?.Invoke (nearProps, collision.transform, transform.position);
+
 		gameObject.SetActive (false);
+		Instantiate (OnDestroyedVFX, transform.position - new Vector3(0,0,.3f), OnDestroyedVFX.transform.rotation);
 	}
 }

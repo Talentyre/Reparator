@@ -30,7 +30,6 @@ public class AStarMesh : MonoBehaviour
 
 	public List<Node> GetRandomPathToHideout (Node currentNode, Room currentRoom, HideoutType type)
 	{
-		// ????
 		List<Node> hideouts = new List<Node> ();
 		while (hideouts.Count < 3)
 		{
@@ -69,6 +68,9 @@ public class AStarMesh : MonoBehaviour
 		List<Node> openSet = new List<Node> ();
 		HashSet<Node> closedSet = new HashSet<Node> ();
 		openSet.Add (start);
+
+		foreach (Node n in Mesh)
+			n.ResetNode ();
 
 		while (openSet.Count > 0)
 		{
