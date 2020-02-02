@@ -3,11 +3,11 @@
 public class Scanner : Prop
 {
 	[Header ("Scanner related")]
-	public ObjectPool OnScannerShotParticles;
+	public GameObject OnScannerShotParticles;
 
 	public override void OnShotParticles ()
 	{
-		var go = OnScannerShotParticles.GetObject ();
+		var go = Instantiate(OnScannerShotParticles);
 		go.transform.position = transform.position;
 	}
 }

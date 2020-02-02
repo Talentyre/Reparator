@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifeTime: 0.6
-  Speed: 16
+  Speed: 30
   HitRadius: 2.5
   HitLayerMask:
     serializedVersion: 2

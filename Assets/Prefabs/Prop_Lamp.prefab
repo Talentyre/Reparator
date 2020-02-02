@@ -181,4 +181,5 @@ MonoBehaviour:
   HideoutType: 3
   CurrentRoom: {fileID: 0}
   CurrentHideout: {fileID: 0}
-  OnLampShotParticles: {fileID: 0}
+  OnLampShotParticles: {fileID: 1205059080757051956, guid: a2735c5402e1e07488f1a8ebae99e78c,
+    type: 3}

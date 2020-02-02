@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public abstract class Prop : MonoBehaviour
 {
@@ -69,7 +70,7 @@ public abstract class Prop : MonoBehaviour
 	public void DisableCollision ()
 	{
 		GetComponent<Collider2D> ().enabled = false;
-		Invoke ("ReenableCollision", 2);
+		Invoke ("ReenableCollision", 1);
 	}
 	public void ReenableCollision ()
 	{
@@ -127,14 +128,14 @@ public abstract class Prop : MonoBehaviour
 		_player = FindObjectOfType<PlayerController> ().transform;
 		Bullet.HitCollider += OnBulletHitCollider;
 
+		/*
 		if (HideoutType == HideoutType.NA)
 			Debug.LogWarning ("(Prop) NA Hideout type is not allowed.", gameObject);
 		if (CurrentRoom == null)
 			Debug.LogWarning ("(Prop) CurrentRoom var is null.", gameObject);
 		if (CurrentHideout == null)
 			Debug.LogWarning ("(Prop) CurrentHideout var is null.", gameObject);
-
-		CurrentHideout.Available = false;
+*/
 		MakeFSM ();
 	}
 

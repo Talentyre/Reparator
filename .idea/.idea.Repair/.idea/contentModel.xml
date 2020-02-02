@@ -39,8 +39,10 @@
               <e p="WarningSign.cs" t="Include" />
             </e>
           </e>
+          <e p="MiniGameTrigger.cs" t="Include" />
           <e p="PooledObject.cs" t="Include" />
           <e p="PropsBehaviour" t="Include">
+            <e p="Distributor.cs" t="Include" />
             <e p="FSMBaseClasses" t="Include">
               <e p="FSMState.cs" t="Include" />
               <e p="FSMSystem.cs" t="Include" />
@@ -48,7 +50,6 @@
               <e p="Transition.cs" t="Include" />
             </e>
             <e p="Lamp.cs" t="Include" />
-            <e p="Microwave.cs" t="Include" />
             <e p="PathfindingSystem" t="Include">
               <e p="AStarMesh.cs" t="Include" />
               <e p="Hideout.cs" t="Include" />
@@ -62,6 +63,7 @@
               <e p="StateCaught.cs" t="Include" />
               <e p="StateHidden.cs" t="Include" />
               <e p="StateHiding.cs" t="Include" />
+              <e p="StateRepaired.cs" t="Include" />
               <e p="StateRevealing.cs" t="Include" />
             </e>
           </e>
