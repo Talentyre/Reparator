@@ -46,6 +46,7 @@ public class JailPuzzle : MiniGameUI
     public Sprite SpriteRb;
     public Sprite SpriteRt;
     public Sprite SpriteTb;
+    public List<Sprite> SpriteVoid = new List<Sprite>();
     
     public override void Start()
     {
@@ -134,6 +135,9 @@ public class JailPuzzle : MiniGameUI
             }
         }
 
-        return null;
+        var rand = Random.Range(0, SpriteVoid.Count);
+        var sprite = SpriteVoid[rand];
+        SpriteVoid.RemoveAt(rand);
+        return sprite;
     }
 }
