@@ -19,8 +19,18 @@ public class AStarMesh : MonoBehaviour
 		Rooms = FindObjectsOfType<Room> ();
 	}
 
+	public Room GetRoomFromHideout (Hideout hideout)
+	{
+		foreach (Room r in Rooms)
+			foreach (Hideout h in r.Hideouts)
+				if (h == hideout)
+					return r;
+		return null;
+	}
+
 	public List<Node> GetRandomPathToHideout (Node currentNode, Room currentRoom, HideoutType type)
 	{
+		// ????
 		List<Node> hideouts = new List<Node> ();
 		while (hideouts.Count < 3)
 		{
@@ -28,8 +38,8 @@ public class AStarMesh : MonoBehaviour
 			if (r == currentRoom)
 				continue;
 
-			Node h = r.GetRandomHideoutOfType (type);
-			if (hideouts.Contains (h))
+			Hideout h = r.GetRandomHideoutOfType (type);
+			if (!h.Available || hideouts.Contains (h))
 				continue;
 
 			hideouts.Add (h);

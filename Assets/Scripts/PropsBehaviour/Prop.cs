@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Linq;
 
 public abstract class Prop : MonoBehaviour
 {
@@ -14,9 +13,11 @@ public abstract class Prop : MonoBehaviour
 
 	[Header ("References")]
 	[SerializeField] Animator _animator = null;
+	[SerializeField] SpriteRenderer _spriteRenderer = null;
 
 	[Header ("Stats")]
 	[SerializeField] float _moveSpeed = 5;
+	[SerializeField] float _speedLostOnShot = 1.5f;
 	[SerializeField] float _playerRevealDistance = 2;
 	[SerializeField] float _bulletInstantRevealDistance = 1;
 	public HideoutType HideoutType = HideoutType.NA;
@@ -52,7 +53,7 @@ public abstract class Prop : MonoBehaviour
 		StateRevealing revealing = new StateRevealing (this);
 		revealing.AddTransition (Transition.Revealed, StateID.Hiding);
 
-		StateHiding hiding = new StateHiding (this, _moveSpeed);
+		StateHiding hiding = new StateHiding (this, _moveSpeed, _speedLostOnShot, _animator, _spriteRenderer);
 		hiding.AddTransition (Transition.FoundHideout, StateID.Hidden);
 
 		StateCaught caught = new StateCaught (this);
@@ -95,6 +96,8 @@ public abstract class Prop : MonoBehaviour
 		Revealed?.Invoke ();
 	}
 
+	public abstract void OnShotParticles ();
+
 	public virtual void Awake ()
 	{
 		m_Transform = transform;
@@ -108,6 +111,7 @@ public abstract class Prop : MonoBehaviour
 		if (CurrentHideout == null)
 			Debug.LogWarning ("(Prop) CurrentHideout var is null.", gameObject);
 
+		CurrentHideout.Available = false;
 		MakeFSM ();
 	}
 
@@ -119,7 +123,7 @@ public abstract class Prop : MonoBehaviour
 
 	void OnDrawGizmos ()
 	{
-		Gizmos.color = Color.yellow;
+		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere (transform.position, _playerRevealDistance);
 	}
 

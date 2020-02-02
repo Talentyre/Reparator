@@ -4,9 +4,12 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+	public static Room PlayerCurrentRoom;
+
     [Header("Shooting")] public Transform TargetTransform;
     public ObjectPool BulletPool;
-    public float ShootCooldown = 0.5f;
+    public ObjectPool FootStepSmokePool;
+	public float ShootCooldown = 0.5f;
 
     [Header("Controls")] public float Speed = 5f;
     public float SmoothTime = .5f;
@@ -14,18 +17,21 @@ public class PlayerController : MonoBehaviour
     private float _shootTimer;
 
     private Rigidbody2D _rigidBody2D;
-    private Vector2 _movement = Vector2.zero;
+	private Vector2 _movement = Vector2.zero;
 
     private Vector2 _velocity = Vector2.zero;
     private Vector3 _targetPosition;
     private bool _controlsActivated = true;
-    private Collider2D _collider2D;
 
+    private Animator _animator;
+
+	public SpriteRenderer PlayerSprite;
+    public Collider2D PropsHitbox;
 
     void Start()
     {
-        _collider2D = GetComponent<Collider2D>();
         _rigidBody2D = GetComponent<Rigidbody2D>();
+		_animator = GetComponent<Animator> ();
 		Prop.SawByPlayer += DeactivateControls;
 		Prop.Revealed += ActivateControls;
 	}
@@ -41,15 +47,18 @@ public class PlayerController : MonoBehaviour
         _movement.x = Input.GetAxis("Horizontal");
         _movement.y = Input.GetAxis("Vertical");
 
-        var screenToWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		_animator.SetFloat ("Velocity", Mathf.Abs (_movement.x + _movement.y));
+
+		var screenToWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         _targetPosition = (new Vector3(screenToWorldPoint.x, screenToWorldPoint.y) - transform.position).normalized * 2;
         
-        if (Math.Abs(Input.GetAxis("TargetHorizontal")) > 0.001f || Math.Abs(Input.GetAxis("TargetVertical")) > 0.001f)
+        if (Math.Abs (Input.GetAxis("TargetHorizontal")) > 0.001f || Math.Abs (Input.GetAxis("TargetVertical")) > 0.001f)
             _targetPosition = new Vector3(Input.GetAxis("TargetHorizontal"), Input.GetAxis("TargetVertical"));
         
-        TargetTransform.position = transform.position + _targetPosition;
+        TargetTransform.position = transform.position + _targetPosition.normalized * 1.5f;
+		PlayerSprite.flipX = _targetPosition.x < 0;
 
-        _shootTimer += Time.deltaTime;
+		_shootTimer += Time.deltaTime;
 
         if ((Input.GetAxis("Shoot") < 0 || Input.GetButton("Shoot")) && _shootTimer > ShootCooldown)
         {
@@ -60,19 +69,25 @@ public class PlayerController : MonoBehaviour
 
     #region Public methods
 
+	public void OnFootStep ()
+	{
+		var smoke = FootStepSmokePool.GetObject ();
+		smoke.transform.position = transform.position - new Vector3 (0, 0.7f);
+	}
+
     public void DeactivateControls()
     {
-        _collider2D.isTrigger = false;
-        
-        _controlsActivated = false;
+		PropsHitbox.enabled = false;
+		_animator.SetFloat ("Velocity", 0);
+
+		_controlsActivated = false;
 		_rigidBody2D.velocity = Vector2.zero;
 		_movement = Vector2.zero;
 	}
     
     public void ActivateControls()
     {
-        _collider2D.isTrigger = true;
-        
+		PropsHitbox.enabled = true;
         _controlsActivated = true;
     }
     
@@ -84,7 +99,9 @@ public class PlayerController : MonoBehaviour
     {
         var bullet = BulletPool.GetObject();
         bullet.transform.position = TargetTransform.position;
-        bullet.GetComponent<Bullet>().Direction = _targetPosition;
+        bullet.GetComponent<Bullet>().Direction = TargetTransform.position - transform.position;
+
+		CamShaker.Instance.ShakeCam (0.4f);
     }
 
     private void FixedUpdate()
@@ -93,5 +110,14 @@ public class PlayerController : MonoBehaviour
         _rigidBody2D.position = Vector2.SmoothDamp(position, position + _movement * Speed, ref _velocity, SmoothTime);
     }
 
-    #endregion
+	void OnTriggerEnter2D (Collider2D other)
+	{
+		if (other.TryGetComponent (out Room r))
+		{
+			Debug.Log ("Room change");
+			PlayerCurrentRoom = r;
+		}
+	}
+
+	#endregion
 }
