@@ -11,9 +11,9 @@ public class MiniGameUI : MonoBehaviour
     [Header("Timer")]
     public float StartTimer = 1f;
     public float Timer = 3f;
-    public Slider TimerSlider;
-    public Image WarningImage;
-
+    public Image TimerGauge;
+    public Animator MouthAnimator;
+    
     public event Action OnWinEvent;
     public event Action OnLoseEvent;
     
@@ -62,14 +62,17 @@ public class MiniGameUI : MonoBehaviour
         if (!_warningOn && _currentTimer < Timer / 2.5)
         {
             _warningOn = true;
-            WarningImage.transform.DOShakePosition(0.25f, 5f,30).SetLoops(-1);
         }
-        TimerSlider.value = _currentTimer / Timer;
+
+        var transformLocalPosition = TimerGauge.transform.localPosition;
+        transformLocalPosition.x = -TimerGauge.rectTransform.rect.size.x * (1 - _currentTimer / Timer);
+        TimerGauge.transform.localPosition = transformLocalPosition;
     }
 
     protected virtual void OnStart()
     {
         _started = true;
+        MouthAnimator.SetBool("start", true);
     }
 
     protected void OnWin()

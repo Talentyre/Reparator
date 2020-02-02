@@ -102,12 +102,15 @@ public class TicTacToe : MiniGameUI
                 ticTacToeSymbol == TicTacToeSymbol.Cross ? CrossImage : null;
             ticTacToeButton.Position = position;
             
-            if (ticTacToeSymbol == TicTacToeSymbol.None)
-                emptyButtons.Add(ticTacToeButton);
-            
             var button = ticTacToeButton.GetComponent<Button>();
             if (ticTacToeSymbol == TicTacToeSymbol.None)
             {
+                emptyButtons.Add(ticTacToeButton);
+                
+                var symbolImageColor = ticTacToeButton.SymbolImage.color;
+                symbolImageColor.a = 0f;
+                ticTacToeButton.SymbolImage.color = symbolImageColor;
+                
                 button.onClick.AddListener(() => OnButtonClicked(ticTacToeButton));
             }
             else
@@ -130,6 +133,10 @@ public class TicTacToe : MiniGameUI
         if (_selectedButton != null)
         {
             _selectedButton.SymbolImage.sprite = null;
+            var col = _selectedButton.SymbolImage.color;
+            col.a = 0f;
+            _selectedButton.SymbolImage.color = col;
+            
             _selectedButton.GetComponent<Button>().interactable = true;   
         }
         

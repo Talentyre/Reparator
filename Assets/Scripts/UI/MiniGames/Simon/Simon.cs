@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Simon : MiniGameUI
@@ -25,15 +26,14 @@ public class Simon : MiniGameUI
         foreach (var simonButton in SimonButtons)
         {
             simonButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClicked(simonButton));
+            var topImageColor = simonButton.TopImage.color;
+            topImageColor.a = 0f;
+            simonButton.TopImage.color = topImageColor;
         }
 
         for (int i = 0; i < 3; i++)
         {
             ButtonSequence.Add(SimonButtons[Random.Range(0, SimonButtons.Count)]);
-        }
-        foreach (var simonButton in ButtonSequence)
-        {
-            Debug.Log(simonButton.TopImage.color);
         }
     }
 
@@ -88,11 +88,11 @@ public class Simon : MiniGameUI
         {
             var pickedButton = ButtonSequence[i];
 
-            pickedButton.TopImage.DOFade(0f, .5f);
+            pickedButton.TopImage.DOFade(1f, .5f);
                 
             yield return new WaitForSeconds(.6f);
             
-            pickedButton.TopImage.DOFade(1f, .5f);
+            pickedButton.TopImage.DOFade(0f, .5f);
             
             yield return new WaitForSeconds(1f);
         }
