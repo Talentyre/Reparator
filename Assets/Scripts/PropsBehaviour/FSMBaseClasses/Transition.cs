@@ -5,4 +5,6 @@
 	Revealed = 2,
 	FoundHideout = 3,
 	MiniGameLost = 4,
+	Repaired = 5,
+	Caught = 6
 }

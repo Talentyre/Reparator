@@ -88,7 +88,7 @@ public class MiniGameUI : MonoBehaviour
         Debug.Log("perdu");
         Close();
         if (OnLoseEvent != null)
-            OnWinEvent();
+            OnLoseEvent();
     }
 
     private void Close()

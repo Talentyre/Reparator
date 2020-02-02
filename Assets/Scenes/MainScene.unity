@@ -6746,6 +6746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 854992809}
   - component: {fileID: 854992808}
+  - component: {fileID: 854992810}
   m_Layer: 13
   m_Name: PropsHitbox
   m_TagString: Untagged
@@ -6768,7 +6769,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.3652105
+  m_Radius: 0.21565825
 --- !u!4 &854992809
 Transform:
   m_ObjectHideFlags: 0
@@ -6783,6 +6784,18 @@ Transform:
   m_Father: {fileID: 97179426}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &854992810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854992807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976874eb4d095b24fb7131c9b6b83c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &865518999
 GameObject:
   m_ObjectHideFlags: 0
@@ -16049,6 +16062,7 @@ MonoBehaviour:
   MiniGames:
   - {fileID: 3825293019076861380, guid: b41a3787d91948749bf01876f1bbdee5, type: 3}
   - {fileID: 3825293019813450259, guid: 2856909c4060983408d00dd5e937c83f, type: 3}
+  - {fileID: 8472389518385352227, guid: 62613c1983069b146a02ba2024f04600, type: 3}
 --- !u!4 &1975887167
 Transform:
   m_ObjectHideFlags: 0

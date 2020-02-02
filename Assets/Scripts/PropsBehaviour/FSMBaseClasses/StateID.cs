@@ -4,5 +4,6 @@
 	Hidden = 1,
 	Revealing = 2,
 	Hiding = 3,
-	Caught = 4
+	Caught = 4,
+	Repaired = 5
 }

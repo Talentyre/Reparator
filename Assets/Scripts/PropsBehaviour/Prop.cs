@@ -8,6 +8,8 @@ public abstract class Prop : MonoBehaviour
 	public static event System.Action Revealed;
 
 	FSMSystem _fsm;
+	public FSMSystem FSM => _fsm;
+
 	Transform m_Transform;
 	Transform _player;
 
@@ -55,11 +57,32 @@ public abstract class Prop : MonoBehaviour
 
 		StateHiding hiding = new StateHiding (this, _moveSpeed, _speedLostOnShot, _animator, _spriteRenderer);
 		hiding.AddTransition (Transition.FoundHideout, StateID.Hidden);
+		hiding.AddTransition (Transition.Caught, StateID.Caught);
 
 		StateCaught caught = new StateCaught (this);
 		caught.AddTransition(Transition.MiniGameLost, StateID.Hiding);
-		 
-		_fsm = new FSMSystem (hidden, revealing, hiding);
+		caught.AddTransition(Transition.Repaired, StateID.Repaired);
+
+		_fsm = new FSMSystem (hidden, revealing, hiding, caught);
+	}
+
+	public void DisableCollision ()
+	{
+		GetComponent<Collider2D> ().enabled = false;
+		Invoke ("ReenableCollision", 2);
+	}
+	public void ReenableCollision ()
+	{
+		GetComponent<Collider2D> ().enabled = true;
+
+	}
+
+	public void DisableProp ()
+	{
+		_animator.SetTrigger ("Hide");
+		_animator.SetFloat ("X", 0);
+		_animator.SetFloat ("Y", 0);
+		GetComponent<Collider2D> ().enabled = false;
 	}
 
 	public void OnNearShot (Vector2 shootPosition)
@@ -129,6 +152,8 @@ public abstract class Prop : MonoBehaviour
 
 	public void OnDead()
 	{
+		SetTransition (Transition.Repaired);
+		DisableProp ();
 		// TODO death anim, sprite and so on...
 	}
 }

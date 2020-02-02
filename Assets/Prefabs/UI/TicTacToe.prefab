@@ -1800,7 +1800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasGroup: {fileID: 3825293019076861403}
   StartTimer: 1
-  Timer: 30
+  Timer: 5
   TimerGauge: {fileID: 8464030391982734233}
   MouthAnimator: {fileID: 5018700309559697191}
   CrossImage: {fileID: 21300000, guid: b7e67c4a9c8c2b047bfe1362be816c0e, type: 3}

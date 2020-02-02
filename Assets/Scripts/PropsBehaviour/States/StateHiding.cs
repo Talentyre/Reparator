@@ -53,6 +53,8 @@ public class StateHiding : FSMState
 
 		_prop.CurrentHideout.Available = true;
 		MoveSpeed = _baseMoveSpeed;
+
+		_prop.DisableCollision ();
 	}
 
 	public override void Act (Transform player, Transform npc)
@@ -114,7 +116,7 @@ public class StateHiding : FSMState
 
 	public override void OnTriggerEnter2D(Collider2D collider2D)
 	{
-		base.OnTriggerEnter2D(collider2D);
-		GameController.Instance.SpawnMiniGame(_prop);
+		//base.OnTriggerEnter2D(collider2D);
+		//GameController.Instance.SpawnMiniGame(_prop);
 	}
 }
