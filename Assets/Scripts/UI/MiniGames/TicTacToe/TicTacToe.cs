@@ -53,8 +53,8 @@ public class TicTacToe : MiniGameUI
         {
         Board = new[,]
         {
-            {TicTacToeSymbol.Circle,TicTacToeSymbol.None, TicTacToeSymbol.Cross},
             {TicTacToeSymbol.Circle,TicTacToeSymbol.Cross, TicTacToeSymbol.Cross},
+            {TicTacToeSymbol.Circle,TicTacToeSymbol.Cross, TicTacToeSymbol.None},
             {TicTacToeSymbol.None,TicTacToeSymbol.Circle, TicTacToeSymbol.None},
         },
         CorrectPosition = new Vector2(0,2)
