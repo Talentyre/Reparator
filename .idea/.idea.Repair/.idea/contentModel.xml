@@ -27,6 +27,7 @@
             <e p="ObjectsRenamer_Editor.cs" t="Include" />
             <e p="ObjectsRenamer_Menu.cs" t="Include" />
             <e p="ObjectsSorter.cs" t="Include" />
+            <e p="Screenshot.cs" t="Include" />
           </e>
           <e p="Game" t="Include">
             <e p="GameController.cs" t="Include" />
@@ -89,6 +90,7 @@
                 <e p="TicTacToeSymbol.cs" t="Include" />
               </e>
             </e>
+            <e p="StartMenu.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
             <e p="NearestObjectGetter.cs" t="Include" />

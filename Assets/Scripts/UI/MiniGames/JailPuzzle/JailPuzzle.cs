@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -53,10 +54,12 @@ public class JailPuzzle : MiniGameUI
     private EventSystem _eventSystem;
     private float _axisCooldown;
     private JailPuzzleButton _selectedButton;
+    private List<Sprite> SpriteVoidCache;
 
     public override void Start()
     {
         base.Start();
+        SpriteVoidCache = SpriteVoid.ToList();
         _buttons = ButtonsPanel.GetComponentsInChildren<JailPuzzleButton>();
         _pickedSetup = _setups[Random.Range(0, _setups.Count)];
 
@@ -231,9 +234,11 @@ public class JailPuzzle : MiniGameUI
             }
         }
 
-        var rand = Random.Range(0, SpriteVoid.Count);
-        var sprite = SpriteVoid[rand];
-        SpriteVoid.RemoveAt(rand);
+        if (SpriteVoidCache.Count == 0)
+            SpriteVoidCache = SpriteVoid.ToList();
+        var rand = Random.Range(0, SpriteVoidCache.Count);
+        var sprite = SpriteVoidCache[rand];
+        SpriteVoidCache.RemoveAt(rand);
         return sprite;
     }
 }
