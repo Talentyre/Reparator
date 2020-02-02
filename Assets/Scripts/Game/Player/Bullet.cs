@@ -12,6 +12,7 @@ public class Bullet : IPoolable
     public Vector3 Direction { get; set; }
 
 	public LayerMask HitLayerMask;
+	public Transform Visual;
 
     private float _lifeTimer;
 
@@ -25,12 +26,14 @@ public class Bullet : IPoolable
             return;
         }
         
-        transform.Translate(Direction * (Time.deltaTime * Speed));
+        transform.Translate(Direction.normalized * (Time.deltaTime * Speed));
+		Visual.Rotate (0, 0, 720 * Time.deltaTime);
     }
 
     public override void Reset()
     {
         _lifeTimer = 0f;
+		transform.rotation = Quaternion.identity;
     }
 
 	void OnCollisionEnter2D (Collision2D collision)

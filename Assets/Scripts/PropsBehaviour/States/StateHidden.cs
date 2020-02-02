@@ -40,6 +40,7 @@ public class StateHidden : FSMState
 	public override void OnShot ()
 	{
 		_prop.Unhide (false);
+		CamShaker.Instance.ShakeCam (0.3f);
 	}
 
 	public override void Act (Transform player, Transform npc)
