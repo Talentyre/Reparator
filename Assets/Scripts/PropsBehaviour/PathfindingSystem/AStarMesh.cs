@@ -90,6 +90,8 @@ public class AStarMesh : MonoBehaviour
 			{
 				if (closedSet.Contains (neighbour))
 					continue;
+				if (neighbour is Hideout && neighbour != end)
+					continue;
 
 				float costToNeighbour = currentNode.Cost + Vector3.SqrMagnitude (currentNode.Position - neighbour.Position);
 				if (costToNeighbour < neighbour.Cost || !openSet.Contains (neighbour))

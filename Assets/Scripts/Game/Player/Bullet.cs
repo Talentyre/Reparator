@@ -24,7 +24,8 @@ public class Bullet : IPoolable
         if (_lifeTimer >= LifeTime)
         {
             gameObject.SetActive(false);
-            return;
+			Instantiate (OnDestroyedVFX, transform.position - new Vector3 (0, 0, .3f), OnDestroyedVFX.transform.rotation);
+			return;
         }
         
         transform.Translate(Direction.normalized * (Time.deltaTime * Speed));
@@ -44,5 +45,14 @@ public class Bullet : IPoolable
 
 		gameObject.SetActive (false);
 		Instantiate (OnDestroyedVFX, transform.position - new Vector3(0,0,.3f), OnDestroyedVFX.transform.rotation);
+	}
+
+	void OnTriggerEnter2D (Collider2D other)
+	{
+		var nearProps = Physics2D.OverlapCircleAll (transform.position, HitRadius, HitLayerMask);
+		HitCollider?.Invoke (nearProps, other.transform, transform.position);
+
+		gameObject.SetActive (false);
+		Instantiate (OnDestroyedVFX, transform.position - new Vector3 (0, 0, .3f), OnDestroyedVFX.transform.rotation);
 	}
 }

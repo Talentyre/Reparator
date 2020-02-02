@@ -1,0 +1,295 @@
+fileFormatVersion: 2
+guid: 7382c7d68f3526d41aaa2c57e02ee74f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2558934755882314734
+    second: Prop_Distributor_Run_Front_0
+  - first:
+      213: -8692899245659905139
+    second: Prop_Distributor_Run_Front_1
+  - first:
+      213: 6205586353936755003
+    second: Prop_Distributor_Run_Front_2
+  - first:
+      213: -6493761893932490007
+    second: Prop_Distributor_Run_Front_3
+  - first:
+      213: -1014723989090406171
+    second: Prop_Distributor_Run_Front_4
+  - first:
+      213: 6666645757413851336
+    second: Prop_Distributor_Run_Front_5
+  - first:
+      213: 6145564343021770778
+    second: Prop_Distributor_Run_Front_6
+  - first:
+      213: 356566994329926341
+    second: Prop_Distributor_Run_Front_7
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Prop_Distributor_Run_Front_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1014.5
+        width: 499.5
+        height: 1014.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d90302e328cebbb4cb7732c09601fa09
+      internalID: -2558934755882314734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_Distributor_Run_Front_1
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 1014.5
+        width: 499.5
+        height: 1014.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26eeaeacef2fccf4eaa807ca0186c166
+      internalID: -8692899245659905139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_Distributor_Run_Front_2
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 1014.5
+        width: 499.5
+        height: 1014.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba9c0095fbc6e54580419a795ff4bcb
+      internalID: 6205586353936755003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_Distributor_Run_Front_3
+      rect:
+        serializedVersion: 2
+        x: 1497
+        y: 1014.5
+        width: 499.5
+        height: 1014.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17586f18978416c4bb7aa7690484f9af
+      internalID: -6493761893932490007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_Distributor_Run_Front_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.5
+        width: 499.5
+        height: 1014.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25cb9ceaeaac51643b59f4ac6c96e811
+      internalID: -1014723989090406171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_Distributor_Run_Front_5
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 0.5
+        width: 499.5
+        height: 1014.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6083c0e621716b54488a36890d7973a8
+      internalID: 6666645757413851336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_Distributor_Run_Front_6
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 0.5
+        width: 499.5
+        height: 1014.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba47ae8d384697f4180812de30d6e882
+      internalID: 6145564343021770778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_Distributor_Run_Front_7
+      rect:
+        serializedVersion: 2
+        x: 1497
+        y: 0.5
+        width: 499.5
+        height: 1014.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f45d51da8bd283469ffa490bae56dbd
+      internalID: 356566994329926341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

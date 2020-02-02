@@ -64,7 +64,6 @@ public abstract class Prop : MonoBehaviour
 
 	public void OnNearShot (Vector2 shootPosition)
 	{
-		Debug.Log ("near shot");
 		if (!(_fsm.CurrentState is StateHidden))
 			return;
 

@@ -2,7 +2,7 @@
 
 public class StateHidden : FSMState
 {
-	static float s_revealChanceOnPlayerNear = 0.2f;
+	static float s_revealChanceOnPlayerNear = 0.25f;
 	static float s_revealChanceOnPlayerNearIncr = 0.15f;
 
 	Prop _prop;
@@ -32,7 +32,10 @@ public class StateHidden : FSMState
 	void TryReveal ()
 	{
 		if (Random.Range (0.0f, 1.0f) < s_revealChanceOnPlayerNear + s_revealChanceOnPlayerNearIncr)
+		{
 			_prop.Unhide (true);
+			s_revealChanceOnPlayerNear = 0.25f; // reset chances
+		}
 		else
 			s_revealChanceOnPlayerNear += s_revealChanceOnPlayerNearIncr;
 	}

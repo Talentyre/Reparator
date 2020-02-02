@@ -49,6 +49,7 @@ public class StateHiding : FSMState
 		_pathToFollow = GameController.Instance.AStarMesh.GetRandomPathToHideout (_prop.CurrentHideout, _prop.CurrentRoom, _prop.HideoutType);
 		_nextDestinationIndex = 0;
 		_nextDestination = _pathToFollow[_nextDestinationIndex].Position;
+		(_pathToFollow[_nextDestinationIndex] as Hideout).Available = false;
 
 		_prop.CurrentHideout.Available = true;
 		MoveSpeed = _baseMoveSpeed;
