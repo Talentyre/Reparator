@@ -1,11 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class TicTacToe : MiniGameUI
 {
@@ -82,7 +85,8 @@ public class TicTacToe : MiniGameUI
     private TicTacToeButton[] _buttons;
     private TicTacToeButton _selectedButton = null;
     private TweenerCore<Color, Color, ColorOptions> _currentTween;
-    
+    private float _axisCooldown;
+
 
     void Start()
     {
@@ -122,7 +126,9 @@ public class TicTacToe : MiniGameUI
         }
 
         var validButtons = emptyButtons.Where(b => b.Position != _pickedSetup.CorrectPosition).ToList();
-        OnButtonClicked(validButtons[Random.Range(0, validButtons.Count())]);
+        var tacToeButton = validButtons[Random.Range(0, validButtons.Count())];
+        FindObjectOfType<EventSystem>().SetSelectedGameObject(tacToeButton.gameObject);
+        OnButtonClicked(tacToeButton);
     }
 
     private void OnButtonClicked(TicTacToeButton ticTacToeButton)
@@ -160,6 +166,56 @@ public class TicTacToe : MiniGameUI
 
     private void UpdateControls()
     {
+        var vertical = Input.GetAxis("Vertical");
+        var horizontal = Input.GetAxis("Horizontal");
+
+        _axisCooldown -= Time.deltaTime;
+        if (Math.Abs(vertical) > 0.001f && _axisCooldown <= 0)
+        {
+            _axisCooldown = 0.5f;
+            int offsetY = vertical > 0 ? -1 : 1;
+            if (!CheckMovement(offsetY, 0) && !CheckMovement(offsetY*2 ,0))
+            {
+                if (!CheckMovement(offsetY, 1) && !CheckMovement(offsetY*2, 1))
+                {
+                    if (!CheckMovement(offsetY, 2) && !CheckMovement(offsetY*2, 2))
+                    {
+                        if (!CheckMovement(offsetY, -1) && !CheckMovement(offsetY*2, -1))
+                        {
+                            if (!CheckMovement(offsetY, -2) && !CheckMovement(offsetY*2, -2))
+                            {
+                                Debug.LogWarning("No case found for vertical movement !!!");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        if (Math.Abs(horizontal) > 0.001f && _axisCooldown <= 0)
+        {
+            _axisCooldown = 0.5f;
+            int offsetX = horizontal > 0 ? 1 : -1;
+            if (!CheckMovement(0, offsetX) && ! CheckMovement(0 ,offsetX*2))
+            {
+                if (!CheckMovement(1, offsetX) && !CheckMovement(1, offsetX*2))
+                {
+                    if (!CheckMovement(2, offsetX) && !CheckMovement(2, offsetX*2))
+                    {
+                        if (!CheckMovement(-1, offsetX) && !CheckMovement(-1, offsetX*2))
+                        {
+                            if (!CheckMovement(-2, offsetX) && !CheckMovement(-2, offsetX*2))
+                            {
+                                Debug.LogWarning("No case found for horizontal movement !!!");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+
         if (Input.GetButton("Submit"))
         {
             if (_selectedButton.Position == _pickedSetup.CorrectPosition)
@@ -171,5 +227,20 @@ public class TicTacToe : MiniGameUI
                 OnLost();
             }
         }
+    }
+
+    private bool CheckMovement(int offsetY, int offsetX)
+    {
+        if (_selectedButton.Position.y + offsetY >= 0 && _selectedButton.Position.y + offsetY < 3 &&
+            _selectedButton.Position.x + offsetX >= 0 && _selectedButton.Position.x + offsetX < 3 && 
+            _pickedSetup.Board[(int) (_selectedButton.Position.y + offsetY), (int) _selectedButton.Position.x + offsetX] ==
+            TicTacToeSymbol.None)
+        {
+            OnButtonClicked(
+                _buttons[(int) (_selectedButton.Position.x + offsetX + (_selectedButton.Position.y + offsetY) * 3)]);
+            return true;
+        }
+
+        return false;
     }
 }

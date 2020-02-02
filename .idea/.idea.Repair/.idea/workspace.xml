@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3883d7f6-d181-41ea-9235-3fc729d91ac7" name="Default Changelist" comment="" />
+    <list default="true" id="3883d7f6-d181-41ea-9235-3fc729d91ac7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Repair/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repair/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Repair/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Repair/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/TicTacToe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/TicTacToe.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/JailPuzzle/JailPuzzle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/JailPuzzle/JailPuzzle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/JailPuzzle/JailPuzzleButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/JailPuzzle/JailPuzzleButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/TicTacToe/TicTacToe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/TicTacToe/TicTacToe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Environment.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Dalle_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Dalle_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Dalle_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Dalle_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Dalle_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Dalle_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Dalle_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Dalle_4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Dalle_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Dalle_6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Dalle_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Dalle_7.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Dalle_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Dalle_9.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/MiniGames/Def_Camille/Resident Evil/Thumbs.db.meta" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,20 +41,28 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PropsBehaviour/FSMBaseClasses/FSMSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PropsBehaviour/FSMBaseClasses/StateID.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PropsBehaviour/FSMBaseClasses/Transition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/JailPuzzle/JailPuzzle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PropsBehaviour/States/StateHiding.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/JailPuzzle/JailPuzzleSetup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PropsBehaviour/PathfindingSystem/Hideout.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/MiniGameUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/MiniGames/MiniGameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/JailPuzzle/JailPuzzlePiece.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/Pool/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/TicTacToe/TicTacToeButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/Pool/IPoolable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/TicTacToe/TicTacToeSetup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E3232360-D51C-46C7-86DD-547E2F0B3F8B/b6/b03045ee/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/TicTacToe/TicTacToe.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraSmoothFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PropsBehaviour/States/StateCaught.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/JailPuzzle/JailPuzzleButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/Simon/Simon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/Simon/SimonButton.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -63,10 +94,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/Simon/SimonColor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/Simon/SimonButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/MiniGameUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/TicTacToe/TicTacToe.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/MiniGameUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/Simon/Simon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/TicTacToe/TicTacToe.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/JailPuzzle/JailPuzzleButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/JailPuzzle/JailPuzzle.cs" />
       </list>
     </option>
   </component>
@@ -91,10 +124,10 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="5824">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="61616">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="5824" />
+      <option name="pid" value="61616" />
       <method v="2" />
     </configuration>
   </component>
@@ -141,78 +174,82 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="424" height="466" key="DebuggerActiveHint" timestamp="1580569612001">
+    <state x="715" y="224" key="#xdebugger.evaluate" timestamp="1580647068340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="424" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1580569612001" />
-    <state width="1877" height="253" key="GridCell.Tab.0.bottom" timestamp="1580570261535">
+    <state x="715" y="224" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1580647068340" />
+    <state width="477" height="466" key="DebuggerActiveHint" timestamp="1580647165736">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261535" />
-    <state width="1877" height="253" key="GridCell.Tab.0.center" timestamp="1580570261535">
+    <state width="477" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1580647165736" />
+    <state width="1877" height="253" key="GridCell.Tab.0.bottom" timestamp="1580649217744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261535" />
-    <state width="1877" height="253" key="GridCell.Tab.0.left" timestamp="1580570261535">
+    <state width="1877" height="253" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217744" />
+    <state width="1877" height="253" key="GridCell.Tab.0.center" timestamp="1580649217744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261535" />
-    <state width="1877" height="253" key="GridCell.Tab.0.right" timestamp="1580570261535">
+    <state width="1877" height="253" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217744" />
+    <state width="1877" height="253" key="GridCell.Tab.0.left" timestamp="1580649217744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261535" />
-    <state width="1877" height="253" key="GridCell.Tab.1.bottom" timestamp="1580570261535">
+    <state width="1877" height="253" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217744" />
+    <state width="1877" height="253" key="GridCell.Tab.0.right" timestamp="1580649217744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261535" />
-    <state width="1877" height="253" key="GridCell.Tab.1.center" timestamp="1580570261535">
+    <state width="1877" height="253" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217744" />
+    <state width="1877" height="253" key="GridCell.Tab.1.bottom" timestamp="1580649217744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261535" />
-    <state width="1877" height="253" key="GridCell.Tab.1.left" timestamp="1580570261535">
+    <state width="1877" height="253" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217744" />
+    <state width="1877" height="253" key="GridCell.Tab.1.center" timestamp="1580649217744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261535" />
-    <state width="1877" height="253" key="GridCell.Tab.1.right" timestamp="1580570261535">
+    <state width="1877" height="253" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217744" />
+    <state width="1877" height="253" key="GridCell.Tab.1.left" timestamp="1580649217744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261535" />
-    <state width="1877" height="253" key="GridCell.Tab.2.bottom" timestamp="1580570261536">
+    <state width="1877" height="253" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217744" />
+    <state width="1877" height="253" key="GridCell.Tab.1.right" timestamp="1580649217744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261536" />
-    <state width="1877" height="253" key="GridCell.Tab.2.center" timestamp="1580570261536">
+    <state width="1877" height="253" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217744" />
+    <state width="1877" height="253" key="GridCell.Tab.2.bottom" timestamp="1580649217744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261536" />
-    <state width="1877" height="253" key="GridCell.Tab.2.left" timestamp="1580570261535">
+    <state width="1877" height="253" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217744" />
+    <state width="1877" height="253" key="GridCell.Tab.2.center" timestamp="1580649217744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261535" />
-    <state width="1877" height="253" key="GridCell.Tab.2.right" timestamp="1580570261536">
+    <state width="1877" height="253" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217744" />
+    <state width="1877" height="253" key="GridCell.Tab.2.left" timestamp="1580649217744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261536" />
-    <state width="1877" height="253" key="GridCell.Tab.3.bottom" timestamp="1580570261536">
+    <state width="1877" height="253" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217744" />
+    <state width="1877" height="253" key="GridCell.Tab.2.right" timestamp="1580649217744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261536" />
-    <state width="1877" height="253" key="GridCell.Tab.3.center" timestamp="1580570261536">
+    <state width="1877" height="253" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217744" />
+    <state width="1877" height="253" key="GridCell.Tab.3.bottom" timestamp="1580649217745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261536" />
-    <state width="1877" height="253" key="GridCell.Tab.3.left" timestamp="1580570261536">
+    <state width="1877" height="253" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217745" />
+    <state width="1877" height="253" key="GridCell.Tab.3.center" timestamp="1580649217744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261536" />
-    <state width="1877" height="253" key="GridCell.Tab.3.right" timestamp="1580570261536">
+    <state width="1877" height="253" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217744" />
+    <state width="1877" height="253" key="GridCell.Tab.3.left" timestamp="1580649217744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580570261536" />
-    <state x="802" y="236" key="RiderGenerateDialog" timestamp="1580570342384">
+    <state width="1877" height="253" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217744" />
+    <state width="1877" height="253" key="GridCell.Tab.3.right" timestamp="1580649217745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="802" y="236" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580570342384" />
+    <state width="1877" height="253" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580649217745" />
+    <state x="802" y="236" key="RiderGenerateDialog" timestamp="1580649419328">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="802" y="236" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580649419328" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1580564730966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -235,29 +272,55 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/Simon/Simon.cs</url>
-          <line>49</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/Simon/Simon.cs" initialLine="48">
-            <startOffsets>
-              <option value="1166" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1215" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/Simon/Simon.cs</url>
           <line>86</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/Simon/Simon.cs" initialLine="86">
             <startOffsets>
-              <option value="2129" />
+              <option value="2188" />
             </startOffsets>
             <endOffsets>
-              <option value="2166" />
+              <option value="2225" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/TicTacToe/TicTacToe.cs</url>
+          <line>135</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/TicTacToe/TicTacToe.cs" initialLine="134">
+            <startOffsets>
+              <option value="4909" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4935" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/TicTacToe/TicTacToe.cs</url>
+          <line>233</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/TicTacToe/TicTacToe.cs" initialLine="258">
+            <startOffsets>
+              <option value="8240" />
+            </startOffsets>
+            <endOffsets>
+              <option value="8592" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/JailPuzzle/JailPuzzle.cs</url>
+          <line>203</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/UI/MiniGames/JailPuzzle/JailPuzzle.cs" initialLine="203">
+            <startOffsets>
+              <option value="7407" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7486" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="C:\Users\ccorvizi\.Rider2019.3\config\scratches" t="IncludeRecursive" />
     <e p="C:\Users\ccorvizi\.Rider2019.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\ccorvizi\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Repair.353342066.00" t="ExcludeRecursive" />
     <e p="C:\Users\ccorvizi\Desktop\Repair" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="DOTween" t="Include">
@@ -21,6 +23,11 @@
         <e p="Scripts" t="Include">
           <e p="BlackStripes.cs" t="Include" />
           <e p="CameraSmoothFollow.cs" t="Include" />
+          <e p="Editor" t="Include">
+            <e p="ObjectsRenamer_Editor.cs" t="Include" />
+            <e p="ObjectsRenamer_Menu.cs" t="Include" />
+            <e p="ObjectsSorter.cs" t="Include" />
+          </e>
           <e p="Game" t="Include">
             <e p="GameController.cs" t="Include" />
             <e p="MiniGames" t="Include">
@@ -29,8 +36,10 @@
             <e p="Player" t="Include">
               <e p="Bullet.cs" t="Include" />
               <e p="PlayerController.cs" t="Include" />
+              <e p="WarningSign.cs" t="Include" />
             </e>
           </e>
+          <e p="PooledObject.cs" t="Include" />
           <e p="PropsBehaviour" t="Include">
             <e p="FSMBaseClasses" t="Include">
               <e p="FSMState.cs" t="Include" />
@@ -38,13 +47,17 @@
               <e p="StateID.cs" t="Include" />
               <e p="Transition.cs" t="Include" />
             </e>
+            <e p="Lamp.cs" t="Include" />
             <e p="Microwave.cs" t="Include" />
             <e p="PathfindingSystem" t="Include">
+              <e p="AStarMesh.cs" t="Include" />
               <e p="Hideout.cs" t="Include" />
               <e p="HideoutType.cs" t="Include" />
+              <e p="Node.cs" t="Include" />
               <e p="Room.cs" t="Include" />
             </e>
             <e p="Prop.cs" t="Include" />
+            <e p="Scanner.cs" t="Include" />
             <e p="States" t="Include">
               <e p="StateCaught.cs" t="Include" />
               <e p="StateHidden.cs" t="Include" />
@@ -54,6 +67,12 @@
           </e>
           <e p="UI" t="Include">
             <e p="MiniGames" t="Include">
+              <e p="JailPuzzle" t="Include">
+                <e p="JailPuzzle.cs" t="Include" />
+                <e p="JailPuzzleButton.cs" t="Include" />
+                <e p="JailPuzzlePiece.cs" t="Include" />
+                <e p="JailPuzzleSetup.cs" t="Include" />
+              </e>
               <e p="MiniGameUI.cs" t="Include" />
               <e p="Simon" t="Include">
                 <e p="Simon.cs" t="Include" />
@@ -74,7 +93,12 @@
               <e p="IPoolable.cs" t="Include" />
               <e p="ObjectPool.cs" t="Include" />
             </e>
+            <e p="Shake" t="Include">
+              <e p="CamShaker.cs" t="Include" />
+              <e p="Shake.cs" t="Include" />
+            </e>
           </e>
+          <e p="Vector3Extensions.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

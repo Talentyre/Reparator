@@ -37,6 +37,11 @@ public class Simon : MiniGameUI
         }
     }
 
+    private void SetSelectedButton()
+    {
+        FindObjectOfType<EventSystem>().SetSelectedGameObject(SimonButtons[0].gameObject);
+    }
+
     protected override void OnStart()
     {
         base.OnStart();
@@ -103,6 +108,7 @@ public class Simon : MiniGameUI
     private void PlayerTurn()
     {
         ActivateButtons(true);
+        SetSelectedButton();
         _playerTurn = true;
     }
 
