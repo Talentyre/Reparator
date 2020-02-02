@@ -20,6 +20,7 @@ public class MiniGameUI : MonoBehaviour
     private float _currentTimer;
     private bool _init;
     private bool _warningOn;
+    private bool _started;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -43,9 +44,11 @@ public class MiniGameUI : MonoBehaviour
         StartTimer -= Time.deltaTime;
         if (StartTimer > 0)
         {
-            OnStart();
             return;
         }
+        
+        if (!_started)
+            OnStart();
 
         
         
@@ -66,7 +69,7 @@ public class MiniGameUI : MonoBehaviour
 
     protected virtual void OnStart()
     {
-        
+        _started = true;
     }
 
     protected void OnWin()

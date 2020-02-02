@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WirePuzzle : MiniGameUI
+public class JailPuzzleSetup
 {
+    public JailPuzzlePiece[,] Board;
     
 }
