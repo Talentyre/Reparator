@@ -41,9 +41,10 @@ public class Node : MonoBehaviour
 
 	public virtual void OnDrawGizmos ()
 	{
+		/*
 		if (ShowName)
 			UnityEditor.Handles.Label (transform.position - new Vector3 (0, 0.5f), transform.name);
-
+*/
 		Gizmos.color = Color.white;
 		if (Neighbours != null && Neighbours.Length != 0)
 			foreach (Node n in Neighbours)

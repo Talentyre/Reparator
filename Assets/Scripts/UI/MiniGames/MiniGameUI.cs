@@ -21,6 +21,7 @@ public class MiniGameUI : MonoBehaviour
     private bool _init;
     private bool _warningOn;
     private bool _started;
+    private bool _gameOver;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -77,6 +78,9 @@ public class MiniGameUI : MonoBehaviour
 
     protected void OnWin()
     {
+        if (_gameOver)
+            return;
+        _gameOver = true;
         Debug.Log("Gagné");
         Close();
         if (OnWinEvent != null)
@@ -85,6 +89,8 @@ public class MiniGameUI : MonoBehaviour
 
     protected void OnLost()
     {
+        if (_gameOver)
+            return;
         Debug.Log("perdu");
         Close();
         if (OnLoseEvent != null)

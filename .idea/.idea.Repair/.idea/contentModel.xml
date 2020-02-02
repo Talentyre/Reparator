@@ -68,6 +68,7 @@
             </e>
           </e>
           <e p="UI" t="Include">
+            <e p="GameOverUI.cs" t="Include" />
             <e p="MiniGames" t="Include">
               <e p="JailPuzzle" t="Include">
                 <e p="JailPuzzle.cs" t="Include" />

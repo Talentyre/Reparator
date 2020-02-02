@@ -15,7 +15,7 @@ public class Hideout : Node
 
 	public override void OnDrawGizmos ()
 	{
-		Handles.Label (transform.position, Type.ToString ());
+		//Handles.Label (transform.position, Type.ToString ());
 		base.OnDrawGizmos ();
 
 		Gizmos.color = Color.black;
