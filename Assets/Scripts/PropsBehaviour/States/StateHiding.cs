@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class StateHiding : FSMState
 {
+	const float MIN_ANIMATION_MULTIPLIER = 0.6f;
+
 	Prop _prop;
 	Animator _animator;
 	SpriteRenderer _spriteRenderer;
@@ -13,18 +15,19 @@ public class StateHiding : FSMState
 		get { return _moveSpeed; }
 		private set
 		{
-			_moveSpeed = value < 0 ? 0 : value;
+			_moveSpeed = value < 0 ? 0 : value > _baseMoveSpeed ? _baseMoveSpeed : value;
 		}
 	}
 
 	float _baseMoveSpeed;
 	float _speedLostOnShot;
+	float _speedRecoverPerSecond;
 
 	List<Node> _pathToFollow;
 	Vector2 _nextDestination;
 	int _nextDestinationIndex;
 
-	public StateHiding (Prop prop, float moveSpeed, float speedLostOnShot, Animator animator, SpriteRenderer spriteRenderer)
+	public StateHiding (Prop prop, float moveSpeed, float speedLostOnShot, float speedRecoverPerSecond, Animator animator, SpriteRenderer spriteRenderer)
 	{
 		ID = StateID.Hiding;
 		_prop = prop;
@@ -32,6 +35,7 @@ public class StateHiding : FSMState
 		_baseMoveSpeed = moveSpeed;
 		MoveSpeed = moveSpeed;
 		_speedLostOnShot = speedLostOnShot;
+		_speedRecoverPerSecond = speedRecoverPerSecond;
 
 		_animator = animator;
 		_spriteRenderer = spriteRenderer;
@@ -60,7 +64,10 @@ public class StateHiding : FSMState
 	public override void Act (Transform player, Transform npc)
 	{
 		if (Vector3.Distance (_nextDestination, npc.transform.position) > 0.05f)
+		{
 			MoveToNextWaypoint ();
+			MoveSpeed += Time.deltaTime * _speedRecoverPerSecond;
+		}
 		else
 			OnWaypointReached ();
 	}
@@ -81,6 +88,7 @@ public class StateHiding : FSMState
 		float y = (angleFromRight > 45 && angleFromRight < 135) ? -Mathf.Sign (direction.y) : 0;
 		_animator.SetFloat ("X", x);
 		_animator.SetFloat ("Y", y);
+		_animator.SetFloat ("Multiplier", MoveSpeed / _baseMoveSpeed * MIN_ANIMATION_MULTIPLIER + MIN_ANIMATION_MULTIPLIER);
 		_spriteRenderer.flipX = x < 0;
 	}
 

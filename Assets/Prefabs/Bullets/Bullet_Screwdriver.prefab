@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548552878804445643}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2784149204486177774}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &6800879857975929924
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: cbde87e2c265fc3439bb29a0f4ed3e8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b157dfefd7a93ff46b224ba9e709a184, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4361975646965383265}
   - component: {fileID: 4306168395010046106}
   m_Layer: 8
-  m_Name: Bullet
+  m_Name: Bullet_Screwdriver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +159,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.8484173, y: 1.5928392}
+  m_Size: {x: 9.886376, y: 2.103218}
   m_EdgeRadius: 0
 --- !u!114 &4306168395010046106
 MonoBehaviour:
@@ -180,5 +180,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   Visual: {fileID: 5217095426500518117}
-  OnDestroyedVFX: {fileID: 8902775844455735082, guid: 994f603a3a94b1c4b8043990cc7a506d,
+  OnDestroyedVFX: {fileID: 8902775844455735082, guid: e40ff8e0b68c6c64dbda1727608f3100,
     type: 3}

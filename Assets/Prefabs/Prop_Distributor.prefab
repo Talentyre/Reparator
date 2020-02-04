@@ -149,7 +149,8 @@ MonoBehaviour:
   _animator: {fileID: 978863872433969304}
   _spriteRenderer: {fileID: 978863872342766417}
   _moveSpeed: 6
-  _speedLostOnShot: 0.5
+  _speedLostOnShot: 0.7
+  _speedRecoverPerSecond: 0.5
   _playerRevealDistance: 1.5
   _bulletInstantRevealDistance: 1
   HideoutType: 1

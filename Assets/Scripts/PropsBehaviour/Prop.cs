@@ -21,6 +21,7 @@ public abstract class Prop : MonoBehaviour
 	[Header ("Stats")]
 	[SerializeField] float _moveSpeed = 5;
 	[SerializeField] float _speedLostOnShot = 1.5f;
+	[SerializeField] float _speedRecoverPerSecond = 0.5f;
 	[SerializeField] float _playerRevealDistance = 2;
 	[SerializeField] float _bulletInstantRevealDistance = 1;
 	public HideoutType HideoutType = HideoutType.NA;
@@ -56,7 +57,7 @@ public abstract class Prop : MonoBehaviour
 		StateRevealing revealing = new StateRevealing (this);
 		revealing.AddTransition (Transition.Revealed, StateID.Hiding);
 
-		StateHiding hiding = new StateHiding (this, _moveSpeed, _speedLostOnShot, _animator, _spriteRenderer);
+		StateHiding hiding = new StateHiding (this, _moveSpeed, _speedLostOnShot, _speedRecoverPerSecond, _animator, _spriteRenderer);
 		hiding.AddTransition (Transition.FoundHideout, StateID.Hidden);
 		hiding.AddTransition (Transition.Caught, StateID.Caught);
 

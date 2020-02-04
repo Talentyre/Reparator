@@ -176,6 +176,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 7257516251028467247}
   _moveSpeed: 8.5
   _speedLostOnShot: 1.5
+  _speedRecoverPerSecond: 1.4
   _playerRevealDistance: 1.4
   _bulletInstantRevealDistance: 1.5
   HideoutType: 3
