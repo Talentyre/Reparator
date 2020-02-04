@@ -32,7 +32,7 @@ public class Shake
 				return new ShakeSettings()
 				{
 					speed = 30,
-					radius = .5f,
+					radius = 1,
 					posAxes = CoordinateAxes.XY,
 					rotAxes = CoordinateAxes.XYZ,
 					rotXMax = 15f,

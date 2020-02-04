@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float SmoothTime = .5f;
     
     private float _shootTimer;
+	private Vector3 _previousMousePos;
 
     private Rigidbody2D _rigidBody2D;
 	private Vector2 _movement = Vector2.zero;
@@ -49,13 +50,17 @@ public class PlayerController : MonoBehaviour
 
 		_animator.SetFloat ("Velocity", Mathf.Abs (_movement.x + _movement.y));
 
-		var screenToWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        _targetPosition = (new Vector3(screenToWorldPoint.x, screenToWorldPoint.y) - transform.position).normalized * 2;
+		if (Input.mousePosition != _previousMousePos)
+		{
+			var screenToWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			_targetPosition = (new Vector3(screenToWorldPoint.x, screenToWorldPoint.y) - transform.position).normalized * 2;
+		}
         
         if (Math.Abs (Input.GetAxis("TargetHorizontal")) > 0.001f || Math.Abs (Input.GetAxis("TargetVertical")) > 0.001f)
             _targetPosition = new Vector3(Input.GetAxis("TargetHorizontal"), Input.GetAxis("TargetVertical"));
-        
-        TargetTransform.position = transform.position + _targetPosition.normalized * 1.5f;
+
+		_previousMousePos = Input.mousePosition;
+		TargetTransform.position = transform.position + _targetPosition.normalized * 1.5f;
 		PlayerSprite.flipX = _targetPosition.x < 0;
 
 		_shootTimer += Time.deltaTime;
@@ -101,7 +106,7 @@ public class PlayerController : MonoBehaviour
         bullet.transform.position = TargetTransform.position;
         bullet.GetComponent<Bullet>().Direction = TargetTransform.position - transform.position;
 
-		CamShaker.Instance.ShakeCam (0.4f);
+		CamShaker.Instance.ShakeCam (0.4f, false);
     }
 
     private void FixedUpdate()

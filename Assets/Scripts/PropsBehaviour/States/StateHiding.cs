@@ -39,7 +39,7 @@ public class StateHiding : FSMState
 
 	public override void OnShot ()
 	{
-		CamShaker.Instance.ShakeCam (0.38f);
+		CamShaker.Instance.ShakeCam (0.6f, false);
 		_prop.OnShotParticles ();
 		MoveSpeed -= _speedLostOnShot;
 	}
