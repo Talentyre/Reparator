@@ -17,6 +17,7 @@ public abstract class Prop : MonoBehaviour
 	[Header ("References")]
 	[SerializeField] Animator _animator = null;
 	[SerializeField] SpriteRenderer _spriteRenderer = null;
+	[SerializeField] GameObject _repairedSymbol = null;
 
 	[Header ("Stats")]
 	[SerializeField] float _moveSpeed = 5;
@@ -127,6 +128,7 @@ public abstract class Prop : MonoBehaviour
 	public virtual void Awake ()
 	{
 		m_Transform = transform;
+		_repairedSymbol.SetActive (false);
 		_player = FindObjectOfType<PlayerController> ().transform;
 		Bullet.HitCollider += OnBulletHitCollider;
 
@@ -149,6 +151,7 @@ public abstract class Prop : MonoBehaviour
 	{
 		SetTransition (Transition.Repaired);
 		DisableProp ();
+		_repairedSymbol.SetActive (true);
 		// TODO death anim, sprite and so on...
 	}
 }
