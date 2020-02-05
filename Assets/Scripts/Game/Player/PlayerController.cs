@@ -111,9 +111,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-		var position = _rigidBody2D.position;
-        _rigidBody2D.position = Vector2.SmoothDamp(position, position + _movement * Speed, ref _velocity, SmoothTime);
-    }
+		//var position = _rigidBody2D.position;
+		//_rigidBody2D.position = Vector2.SmoothDamp (position, position + _movement * Speed, ref _velocity, SmoothTime);
+
+		// new movement code (to move chairs)
+		var vel = Vector2.SmoothDamp (_rigidBody2D.velocity, _movement * Speed, ref _velocity, SmoothTime);
+		_rigidBody2D.velocity = vel;
+	}
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
