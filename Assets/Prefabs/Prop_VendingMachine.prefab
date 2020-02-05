@@ -44,7 +44,7 @@ Animator:
   m_GameObject: {fileID: 3667471739481080165}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7fa39c6c053de674abf15c836d62f28d, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -66,12 +66,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 3667471739481080162}
+  _spriteRenderer: {fileID: 0}
   _moveSpeed: 6.5
+  _speedLostOnShot: 1.5
+  _speedRecoverPerSecond: 0.5
   _playerRevealDistance: 1.6
   _bulletInstantRevealDistance: 1.5
+  _chancesToBeFeared: 0.22
   HideoutType: 1
   CurrentRoom: {fileID: 0}
   CurrentHideout: {fileID: 0}
+  OnScannerShotParticles: {fileID: 0}
 --- !u!61 &3667471739481080163
 BoxCollider2D:
   m_ObjectHideFlags: 0

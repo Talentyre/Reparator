@@ -153,6 +153,7 @@ MonoBehaviour:
   _speedRecoverPerSecond: 1.1
   _playerRevealDistance: 1.6
   _bulletInstantRevealDistance: 1.5
+  _chancesToBeFeared: 0.35
   HideoutType: 1
   CurrentRoom: {fileID: 0}
   CurrentHideout: {fileID: 0}

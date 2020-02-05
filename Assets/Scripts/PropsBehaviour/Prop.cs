@@ -24,6 +24,7 @@ public abstract class Prop : MonoBehaviour
 	[SerializeField] float _speedRecoverPerSecond = 0.5f;
 	[SerializeField] float _playerRevealDistance = 2;
 	[SerializeField] float _bulletInstantRevealDistance = 1;
+	[SerializeField] float _chancesToBeFeared = 0.3f;
 	public HideoutType HideoutType = HideoutType.NA;
 
 	[Header ("Pathfinding")]
@@ -39,8 +40,8 @@ public abstract class Prop : MonoBehaviour
 		}
 
 		foreach (var prop in nearHitProps)
-			if (prop.TryGetComponent (out Prop p))
-				p.OnNearShot (hitPosition);
+			if (prop.TryGetComponent (out Prop p) && p == this)
+					p.OnNearShot (hitPosition);
 	}
 
 	public void SetTransition (Transition transition)
@@ -76,7 +77,6 @@ public abstract class Prop : MonoBehaviour
 	public void ReenableCollision ()
 	{
 		GetComponent<Collider2D> ().enabled = true;
-
 	}
 
 	public void DisableProp ()
@@ -92,7 +92,8 @@ public abstract class Prop : MonoBehaviour
 		if (!(_fsm.CurrentState is StateHidden))
 			return;
 
-		Unhide (Vector2.Distance (shootPosition, transform.position) >= _bulletInstantRevealDistance);
+		if (UnityEngine.Random.Range (0f, 1f) < _chancesToBeFeared)
+			Unhide (Vector2.Distance (shootPosition, transform.position) >= _bulletInstantRevealDistance);
 	}
 
 	public void OnShot ()
@@ -129,14 +130,6 @@ public abstract class Prop : MonoBehaviour
 		_player = FindObjectOfType<PlayerController> ().transform;
 		Bullet.HitCollider += OnBulletHitCollider;
 
-		/*
-		if (HideoutType == HideoutType.NA)
-			Debug.LogWarning ("(Prop) NA Hideout type is not allowed.", gameObject);
-		if (CurrentRoom == null)
-			Debug.LogWarning ("(Prop) CurrentRoom var is null.", gameObject);
-		if (CurrentHideout == null)
-			Debug.LogWarning ("(Prop) CurrentHideout var is null.", gameObject);
-*/
 		MakeFSM ();
 	}
 
