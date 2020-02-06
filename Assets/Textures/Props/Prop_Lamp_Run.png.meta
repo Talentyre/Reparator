@@ -111,8 +111,8 @@ TextureImporter:
         y: 349
         width: 252
         height: 350
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,8 +132,8 @@ TextureImporter:
         y: 348
         width: 252
         height: 351
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,8 +153,8 @@ TextureImporter:
         y: 348
         width: 252
         height: 351
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,8 +174,8 @@ TextureImporter:
         y: 0.5
         width: 252.33333
         height: 347.5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,8 +195,8 @@ TextureImporter:
         y: 0.5
         width: 252.33333
         height: 347.5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -212,12 +212,12 @@ TextureImporter:
       name: Prop_Lamp_Run_5
       rect:
         serializedVersion: 2
-        x: 504
-        y: 0.5
-        width: 252.33333
-        height: 347.5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 505
+        y: 0
+        width: 252
+        height: 348
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

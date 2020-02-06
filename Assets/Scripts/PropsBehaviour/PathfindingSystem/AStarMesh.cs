@@ -65,7 +65,7 @@ public class AStarMesh : MonoBehaviour
 
 	List<Node> FindPath (Node start, Node end)
 	{
-		List<Node> openSet = new List<Node> ();
+		Heap<Node> openSet = new Heap<Node> (Mesh.Length);
 		HashSet<Node> closedSet = new HashSet<Node> ();
 		openSet.Add (start);
 
@@ -74,13 +74,7 @@ public class AStarMesh : MonoBehaviour
 
 		while (openSet.Count > 0)
 		{
-			Node currentNode = openSet[0];
-
-			for (int i = 1; i < openSet.Count; i++)
-				if (openSet[i].FCost < currentNode.FCost || openSet[i].FCost == currentNode.FCost && openSet[i].Heuristic < currentNode.Heuristic)
-					currentNode = openSet[i];
-
-			openSet.Remove (currentNode);
+			Node currentNode = openSet.RemoveFirst ();
 			closedSet.Add (currentNode);
 
 			if (currentNode == end)

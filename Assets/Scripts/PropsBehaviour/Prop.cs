@@ -34,10 +34,11 @@ public abstract class Prop : MonoBehaviour
 
 	void OnBulletHitCollider (Collider2D[] nearHitProps, Transform nearest, Vector2 hitPosition)
 	{
-		if (nearest.TryGetComponent (out Prop nearestProp) && nearestProp == this)
+		if (nearest.TryGetComponent (out Prop nearestProp))
 		{
-			OnShot ();
-			return;
+			if (nearestProp == this)
+				OnShot ();
+			else return;
 		}
 
 		foreach (var prop in nearHitProps)
