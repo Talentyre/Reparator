@@ -182,3 +182,4 @@ MonoBehaviour:
   Visual: {fileID: 5217095426500518117}
   OnDestroyedVFX: {fileID: 8902775844455735082, guid: 994f603a3a94b1c4b8043990cc7a506d,
     type: 3}
+  OnHitClip: {fileID: 8300000, guid: 06a2299fab6e3464fa1d165c5d56b6a6, type: 3}

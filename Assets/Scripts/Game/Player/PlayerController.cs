@@ -29,7 +29,12 @@ public class PlayerController : MonoBehaviour
 	public SpriteRenderer PlayerSprite;
     public Collider2D PropsHitbox;
 
-    void Start()
+    [Header("Audio")]
+	public AudioSource shootAudioSource;
+	public AudioSource stepsAudioSource;
+	public AudioClip[] footSteps;
+
+	void Start()
     {
         _rigidBody2D = GetComponent<Rigidbody2D>();
 		_animator = GetComponent<Animator> ();
@@ -78,9 +83,12 @@ public class PlayerController : MonoBehaviour
 	{
 		var smoke = FootStepSmokePool.GetObject ();
 		smoke.transform.position = transform.position - new Vector3 (0, 0.7f);
+
+		stepsAudioSource.clip = footSteps[UnityEngine.Random.Range (0, footSteps.Length)];
+		stepsAudioSource.Play ();
 	}
 
-    public void DeactivateControls()
+	public void DeactivateControls()
     {
 		PropsHitbox.enabled = false;
 		_animator.SetFloat ("Velocity", 0);
@@ -105,6 +113,9 @@ public class PlayerController : MonoBehaviour
         var bullet = BulletPool.GetObject();
         bullet.transform.position = TargetTransform.position;
         bullet.GetComponent<Bullet>().Direction = TargetTransform.position - transform.position;
+
+		shootAudioSource.pitch = UnityEngine.Random.Range (1.5f, 2.5f);
+		shootAudioSource.Play ();
 
 		CamShaker.Instance.ShakeCam (0.4f, false);
     }

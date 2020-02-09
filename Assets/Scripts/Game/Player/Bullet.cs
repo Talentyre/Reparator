@@ -15,6 +15,8 @@ public class Bullet : IPoolable
 	public Transform Visual;
 	public GameObject OnDestroyedVFX;
 
+	public AudioClip OnHitClip;
+
     private float _lifeTimer;
 
     void Update()
@@ -45,6 +47,7 @@ public class Bullet : IPoolable
 
 		gameObject.SetActive (false);
 		Instantiate (OnDestroyedVFX, transform.position - new Vector3(0,0,.3f), OnDestroyedVFX.transform.rotation);
+		AudioManager.Instance.PlaySFX (OnHitClip, 0.5f);
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
@@ -54,5 +57,6 @@ public class Bullet : IPoolable
 
 		gameObject.SetActive (false);
 		Instantiate (OnDestroyedVFX, transform.position - new Vector3 (0, 0, .3f), OnDestroyedVFX.transform.rotation);
+		AudioManager.Instance.PlaySFX (OnHitClip, 0.5f);
 	}
 }
