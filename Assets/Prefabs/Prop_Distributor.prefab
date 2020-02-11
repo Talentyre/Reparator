@@ -159,6 +159,9 @@ MonoBehaviour:
   HideoutType: 1
   CurrentRoom: {fileID: 0}
   CurrentHideout: {fileID: 0}
+  OnHitClips:
+  - {fileID: 8300000, guid: f16e2aaee6800c849b68e46912b2a5c1, type: 3}
+  - {fileID: 8300000, guid: 6194654af8c16894c80eedb925dfd848, type: 3}
   OnDistributorShotParticles: {fileID: 0}
 --- !u!61 &978863872433969310
 BoxCollider2D:

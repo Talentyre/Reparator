@@ -33,7 +33,13 @@ public class GameController : MonoBehaviour
     public Transform PropsParent;
     private bool _gameOver;
 
-    private void Awake()
+	[Header ("Audio")]
+	public AudioClip WinMiniGameClip;
+	public AudioClip LoseMiniGameClip;
+	public AudioClip VictoryClip;
+	public AudioClip GameOverClip;
+
+	private void Awake()
     {
         if (Instance != null)
         {
@@ -124,10 +130,9 @@ public class GameController : MonoBehaviour
     private void OnLose()
     {
         _gameOver = true;
-        
         PlayerController.DeactivateControls();
-        
         StartCoroutine(LoseCoroutine());
+		AudioManager.Instance.PlaySFX (GameOverClip);
     }
     
     private IEnumerator LoseCoroutine()
@@ -144,11 +149,11 @@ public class GameController : MonoBehaviour
     private void OnWin()
     {
         PlayerController.DeactivateControls();
-        
         StartCoroutine(WinCoroutine());
-    }
+		AudioManager.Instance.PlaySFX (VictoryClip, 0.4f);
+	}
 
-    private IEnumerator WinCoroutine()
+	private IEnumerator WinCoroutine()
     {
         PropCountText.rectTransform.DOScale(1.5f, 0.25f);
         yield return new WaitForSeconds(.5f);
@@ -194,14 +199,19 @@ public class GameController : MonoBehaviour
         {
             OnWin();
         }
+		else
+		{
+			AudioManager.Instance.PlaySFX (WinMiniGameClip);
+		}
     }
 
     private void OnLoseMiniGame(Prop caughtProp)
     {
         caughtProp.SetTransition(Transition.MiniGameLost);
-    }
+		AudioManager.Instance.PlaySFX (LoseMiniGameClip);
+	}
 
-    private void UpdatePropCountUI()
+	private void UpdatePropCountUI()
     {
         PropCountText.text = _propCount + " / " + _totalPropCount;
     }

@@ -91,14 +91,10 @@ public class AudioManager : MonoBehaviour
 	{
 		_sfxSource.PlayOneShot (sfxClip);
 	}
-	public void PlaySFX (AudioClip sfxClip, float volume)
+	public void PlaySFX (AudioClip sfxClip, float volume, float pitch = 1)
 	{
+		_sfxSource.pitch = pitch;
 		_sfxSource.PlayOneShot (sfxClip, volume);
-	}
-
-	public void PlaySFX (AudioClip sfxClip, float volume, float pan)
-	{
-		_sfxSource.panStereo = pan;
 	}
 
 	public void SetMusicVolume (float volume)

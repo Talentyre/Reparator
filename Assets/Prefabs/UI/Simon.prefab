@@ -1033,6 +1033,8 @@ MonoBehaviour:
   - {fileID: 3825293018551566712}
   - {fileID: 3825293019692942568}
   - {fileID: 3825293019841878196}
+  ButtonClicClip: {fileID: 8300000, guid: 6a5c99d2b58a4fe41bda9b39f64f72a4, type: 3}
+  ButtonLightClip: {fileID: 8300000, guid: 482a06908d22d4247b187acfc58251b8, type: 3}
 --- !u!1 &265904276529999209
 GameObject:
   m_ObjectHideFlags: 0

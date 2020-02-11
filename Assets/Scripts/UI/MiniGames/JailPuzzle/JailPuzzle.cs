@@ -56,7 +56,9 @@ public class JailPuzzle : MiniGameUI
     private JailPuzzleButton _selectedButton;
     private List<Sprite> SpriteVoidCache;
 
-    public override void Start()
+	public AudioClip ButtonRotateClip;
+
+	public override void Start()
     {
         base.Start();
         SpriteVoidCache = SpriteVoid.ToList();
@@ -182,6 +184,7 @@ public class JailPuzzle : MiniGameUI
             jailPuzzleButton.CurrentRotation = 0;
 
         SetButtonRotation(jailPuzzleButton);
+		AudioManager.Instance.PlaySFX (ButtonRotateClip);
         CheckWin();
     }
 

@@ -32,6 +32,9 @@ public abstract class Prop : MonoBehaviour
 	public Room CurrentRoom = null;
 	public Hideout CurrentHideout = null;
 
+	[Header ("Audio")]
+	public AudioClip[] OnHitClips;
+
 	void OnBulletHitCollider (Collider2D[] nearHitProps, Transform nearest, Vector2 hitPosition)
 	{
 		if (nearest.TryGetComponent (out Prop nearestProp))
@@ -101,6 +104,7 @@ public abstract class Prop : MonoBehaviour
 	public void OnShot ()
 	{
 		_fsm.CurrentState.OnShot ();
+		AudioManager.Instance.PlaySFX (OnHitClips[UnityEngine.Random.Range (0, OnHitClips.Length)], 0.7f);
 	}
 
 	public virtual void Unhide (bool instantly)

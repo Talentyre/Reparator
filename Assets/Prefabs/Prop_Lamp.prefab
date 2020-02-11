@@ -185,6 +185,10 @@ MonoBehaviour:
   HideoutType: 3
   CurrentRoom: {fileID: 0}
   CurrentHideout: {fileID: 0}
+  OnHitClips:
+  - {fileID: 8300000, guid: 88ccf078abb808c40812ddf0ed63fec3, type: 3}
+  - {fileID: 8300000, guid: f6795e092dc26b94a882cfdb56bd83a1, type: 3}
+  - {fileID: 8300000, guid: 19a7c68c1bd19a54f94e031f110ccf3f, type: 3}
   OnLampShotParticles: {fileID: 701728445455807035, guid: 9e409d4c38ee8894890c1afd1addfa48,
     type: 3}
 --- !u!1001 &522810345073043459

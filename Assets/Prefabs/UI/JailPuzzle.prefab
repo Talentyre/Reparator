@@ -758,6 +758,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 540f3494d95b27d47ad108dc60cdc3a4, type: 3}
   - {fileID: 21300000, guid: 300597142db058744918bfdb163e74ee, type: 3}
   - {fileID: 21300000, guid: ac4060214bab2b74ebef79675656623f, type: 3}
+  ButtonRotateClip: {fileID: 8300000, guid: 7ba0672bdf1a7c2498c18d1f111508f2, type: 3}
 --- !u!1 &3893834638984050303
 GameObject:
   m_ObjectHideFlags: 0

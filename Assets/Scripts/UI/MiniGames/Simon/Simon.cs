@@ -18,8 +18,11 @@ public class Simon : MiniGameUI
     private float _timer;
     private int _turnCount = 1;
     private int _chosenButtonCount = 0;
-    
-    void Start()
+
+	public AudioClip ButtonClicClip;
+	public AudioClip ButtonLightClip;
+
+	void Start()
     {
         base.Start();
 
@@ -61,7 +64,9 @@ public class Simon : MiniGameUI
     {
         if (!_playerTurn)
             return;
-        
+
+		AudioManager.Instance.PlaySFX (ButtonClicClip);
+
         if (simonButton != ButtonSequence[_chosenButtonCount])
         {
             OnLost();
@@ -94,7 +99,8 @@ public class Simon : MiniGameUI
             var pickedButton = ButtonSequence[i];
 
             pickedButton.TopImage.DOFade(1f, .35f);
-                
+			AudioManager.Instance.PlaySFX (ButtonLightClip);    
+
             yield return new WaitForSeconds(.5f);
             
             pickedButton.TopImage.DOFade(0f, .35f);

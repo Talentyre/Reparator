@@ -8,6 +8,8 @@ public class MiniGameManager : MonoBehaviour
     public List<MiniGameUI> MiniGames = new List<MiniGameUI>();
     private List<MiniGameUI> _usedMiniGames = new List<MiniGameUI>();
 
+	public AudioClip MiniGameSpawnClip;
+
     public MiniGameUI SpawnRandomMiniGame()
     {
         if (_usedMiniGames.Count >= MiniGames.Count)
@@ -17,6 +19,7 @@ public class MiniGameManager : MonoBehaviour
         _usedMiniGames.Add(pickedMiniGame);
 
 		GameController.Instance.TimeElapsing = false;
+		AudioManager.Instance.PlaySFX (MiniGameSpawnClip);
         return Instantiate(pickedMiniGame);
     }
 }
