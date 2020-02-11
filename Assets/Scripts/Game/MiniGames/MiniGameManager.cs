@@ -7,7 +7,6 @@ public class MiniGameManager : MonoBehaviour
 {
     public List<MiniGameUI> MiniGames = new List<MiniGameUI>();
     private List<MiniGameUI> _usedMiniGames = new List<MiniGameUI>();
-    
 
     public MiniGameUI SpawnRandomMiniGame()
     {
@@ -16,7 +15,8 @@ public class MiniGameManager : MonoBehaviour
         var availableMiniGames = MiniGames.Where(m => !_usedMiniGames.Contains(m)).ToList();
         var pickedMiniGame = availableMiniGames[Random.Range(0, availableMiniGames.Count())];
         _usedMiniGames.Add(pickedMiniGame);
-        
+
+		GameController.Instance.TimeElapsing = false;
         return Instantiate(pickedMiniGame);
     }
 }

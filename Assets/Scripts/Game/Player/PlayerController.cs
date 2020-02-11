@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 	public static Room PlayerCurrentRoom;
 
     [Header("Shooting")] public Transform TargetTransform;
-    public ObjectPool BulletPool;
+    public ObjectPool[] BulletsPools;
     public ObjectPool FootStepSmokePool;
 	public float ShootCooldown = 0.5f;
 
@@ -110,13 +110,14 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
-        var bullet = BulletPool.GetObject();
+        var bullet = BulletsPools[UnityEngine.Random.Range (0, BulletsPools.Length)].GetObject ();
         bullet.transform.position = TargetTransform.position;
         bullet.GetComponent<Bullet>().Direction = TargetTransform.position - transform.position;
 
 		shootAudioSource.pitch = UnityEngine.Random.Range (1.5f, 2.5f);
 		shootAudioSource.Play ();
 
+		_animator.SetTrigger ("Shoot");
 		CamShaker.Instance.ShakeCam (0.4f, false);
     }
 

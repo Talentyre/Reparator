@@ -180,5 +180,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   Visual: {fileID: 5217095426500518117}
-  OnDestroyedVFX: {fileID: 8902775844455735082, guid: e40ff8e0b68c6c64dbda1727608f3100,
+  OnDestroyedVFX: {fileID: 8902775844455735082, guid: 994f603a3a94b1c4b8043990cc7a506d,
     type: 3}
+  OnHitClip: {fileID: 0}

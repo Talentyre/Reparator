@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
 
     [Header("GamePlay")] [SerializeField] int _totalPropCount = 10;
     public float GameDuration = 60 * 5;
+	public bool TimeElapsing = true;
 
     // todo maybe put this in a specific UI class
     [Header("UI")] public Text PropCountText;
@@ -106,7 +107,8 @@ public class GameController : MonoBehaviour
         if (_gameOver)
             return;
         
-        GameDuration -= Time.deltaTime;
+		if (TimeElapsing)
+			GameDuration -= Time.deltaTime;
         if (GameDuration <= 0)
         {
             OnLose();

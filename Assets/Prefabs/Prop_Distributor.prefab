@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978863872342766419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.32, z: 0}
   m_LocalScale: {x: 0.7439285, y: 0.7439285, z: 0.7439285}
   m_Children: []
   m_Father: {fileID: 978863872433969311}
@@ -150,7 +150,7 @@ MonoBehaviour:
   _animator: {fileID: 978863872433969304}
   _spriteRenderer: {fileID: 978863872342766417}
   _repairedSymbol: {fileID: 4085082940548133988}
-  _moveSpeed: 6
+  _moveSpeed: 6.5
   _speedLostOnShot: 0.7
   _speedRecoverPerSecond: 0.5
   _playerRevealDistance: 1.5

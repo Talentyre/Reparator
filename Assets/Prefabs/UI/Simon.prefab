@@ -1024,7 +1024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasGroup: {fileID: 265904276327755858}
   StartTimer: 1
-  Timer: 22
+  Timer: 15.5
   TimerGauge: {fileID: 6538305521485356162}
   MouthAnimator: {fileID: 1994636619223448774}
   ButtonDuration: 0.5

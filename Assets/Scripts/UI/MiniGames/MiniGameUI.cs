@@ -80,6 +80,7 @@ public class MiniGameUI : MonoBehaviour
     {
         if (_gameOver)
             return;
+		GameController.Instance.TimeElapsing = true;
         _gameOver = true;
         Debug.Log("Gagné");
         Close();
@@ -91,7 +92,8 @@ public class MiniGameUI : MonoBehaviour
     {
         if (_gameOver)
             return;
-        Debug.Log("perdu");
+		GameController.Instance.TimeElapsing = true;
+		Debug.Log("perdu");
         Close();
         if (OnLoseEvent != null)
             OnLoseEvent();

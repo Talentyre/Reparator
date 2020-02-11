@@ -159,7 +159,7 @@ MonoBehaviour:
   HideoutType: 1
   CurrentRoom: {fileID: 0}
   CurrentHideout: {fileID: 0}
-  OnScannerShotParticles: {fileID: 2734213624155742316, guid: 7ff9d7e41ed93cc4195ffbd2d7a1320f,
+  OnScannerShotParticles: {fileID: 5068019823883395828, guid: e7c4e4a370e368f4da100383a54dc5f5,
     type: 3}
 --- !u!61 &5446450442129359771
 BoxCollider2D:

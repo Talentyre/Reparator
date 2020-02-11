@@ -185,7 +185,7 @@ MonoBehaviour:
   HideoutType: 3
   CurrentRoom: {fileID: 0}
   CurrentHideout: {fileID: 0}
-  OnLampShotParticles: {fileID: 1205059080757051956, guid: a2735c5402e1e07488f1a8ebae99e78c,
+  OnLampShotParticles: {fileID: 701728445455807035, guid: 9e409d4c38ee8894890c1afd1addfa48,
     type: 3}
 --- !u!1001 &522810345073043459
 PrefabInstance:

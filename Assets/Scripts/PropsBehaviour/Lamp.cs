@@ -7,7 +7,7 @@ public class Lamp : Prop
 
 	public override void OnShotParticles ()
 	{
-		var go = Instantiate(OnLampShotParticles);
+		var go = Instantiate(OnLampShotParticles, transform);
 		go.transform.position = transform.position;
 	}
 }

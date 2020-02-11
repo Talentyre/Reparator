@@ -93,13 +93,13 @@ public class Simon : MiniGameUI
         {
             var pickedButton = ButtonSequence[i];
 
-            pickedButton.TopImage.DOFade(1f, .5f);
+            pickedButton.TopImage.DOFade(1f, .35f);
                 
-            yield return new WaitForSeconds(.6f);
+            yield return new WaitForSeconds(.5f);
             
-            pickedButton.TopImage.DOFade(0f, .5f);
+            pickedButton.TopImage.DOFade(0f, .35f);
             
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
         }
 
         PlayerTurn();
