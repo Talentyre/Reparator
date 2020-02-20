@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
 	AudioSource _sfxSource;
 	int _currentPlayingIndex;
 
+	[SerializeField] AudioClip _firstMusic = null;
+
 	void Awake ()
 	{
 		if (Instance != null)
@@ -27,14 +29,16 @@ public class AudioManager : MonoBehaviour
 
 		foreach (var source in _audioSources)
 			source.loop = true;
+
+		PlayMusic (_firstMusic, 0.2f);
 	}
 
-	public void PlayMusic (AudioClip musicClip)
+	public void PlayMusic (AudioClip musicClip, float volume = 1)
 	{
 		var activeSource = _audioSources[_currentPlayingIndex];
 
 		activeSource.clip = musicClip;
-		activeSource.volume = 1;
+		activeSource.volume = volume;
 		activeSource.Play ();
 	}
 
@@ -67,6 +71,9 @@ public class AudioManager : MonoBehaviour
 
 	public void PlayMusicWithCrossFade (AudioClip newMusicClip, float transitionTime = 1)
 	{
+		if (newMusicClip == _audioSources[_currentPlayingIndex].clip)
+			return;
+
 		var activeSource = _audioSources[_currentPlayingIndex];
 		var newSource = _audioSources[1 - _currentPlayingIndex];
 		_currentPlayingIndex = 1 - _currentPlayingIndex;
@@ -77,10 +84,12 @@ public class AudioManager : MonoBehaviour
 	}
 	IEnumerator CrossFadeMusic (AudioSource previousSource, AudioSource newSource, float transitionTime)
 	{
+		float targetVolume = previousSource.volume;
+
 		for (float t = 0; t <= transitionTime; t += Time.deltaTime)
 		{
-			previousSource.volume = 1 - t / transitionTime;
-			newSource.volume = t / transitionTime;
+			previousSource.volume = (1 - t / transitionTime) * targetVolume;
+			newSource.volume = (t / transitionTime) * targetVolume;
 			yield return null;
 		}
 

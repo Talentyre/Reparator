@@ -86,6 +86,8 @@ public class MiniGameUI : MonoBehaviour
         Close();
         if (OnWinEvent != null)
             OnWinEvent();
+
+		FindObjectOfType<GameMusicInit> ().PlayGameMusic ();
     }
 
     protected void OnLost()
@@ -97,7 +99,8 @@ public class MiniGameUI : MonoBehaviour
         Close();
         if (OnLoseEvent != null)
             OnLoseEvent();
-    }
+		FindObjectOfType<GameMusicInit> ().PlayGameMusic ();
+	}
 
     private void Close()
     {
