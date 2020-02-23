@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class MiniGameUI : MonoBehaviour
 {
+	public static event Action GameWon;
+
     public CanvasGroup CanvasGroup;
     [Header("Timer")]
     public float StartTimer = 1f;
@@ -87,7 +89,8 @@ public class MiniGameUI : MonoBehaviour
         if (OnWinEvent != null)
             OnWinEvent();
 
-		FindObjectOfType<GameMusicInit> ().PlayGameMusic ();
+		GameWon?.Invoke ();
+		//FindObjectOfType<GameMusicInit> ().PlayGameMusic ();
     }
 
     protected void OnLost()
@@ -99,7 +102,7 @@ public class MiniGameUI : MonoBehaviour
         Close();
         if (OnLoseEvent != null)
             OnLoseEvent();
-		FindObjectOfType<GameMusicInit> ().PlayGameMusic ();
+		FindObjectOfType<GameMusicInit> ().PlayChaseMusic ();
 	}
 
     private void Close()

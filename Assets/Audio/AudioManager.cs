@@ -71,6 +71,8 @@ public class AudioManager : MonoBehaviour
 
 	public void PlayMusicWithCrossFade (AudioClip newMusicClip, float transitionTime = 1)
 	{
+		StopAllCoroutines ();
+
 		if (newMusicClip == _audioSources[_currentPlayingIndex].clip)
 			return;
 
@@ -84,7 +86,7 @@ public class AudioManager : MonoBehaviour
 	}
 	IEnumerator CrossFadeMusic (AudioSource previousSource, AudioSource newSource, float transitionTime)
 	{
-		float targetVolume = previousSource.volume;
+		float targetVolume = 0.3f;
 
 		for (float t = 0; t <= transitionTime; t += Time.deltaTime)
 		{

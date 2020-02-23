@@ -24,4 +24,10 @@ public class WarningSign : MonoBehaviour
 		_spriteRenderer.enabled = true;
 		_animator.SetTrigger ("Warn");
 	}
+
+	private void OnDestroy ()
+	{
+		Prop.SawByPlayer -= OnPropSawByPlayer;
+		Prop.Revealed -= OnPropRevealed;
+	}
 }

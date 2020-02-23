@@ -19,4 +19,10 @@ public class BlackStripes : MonoBehaviour
 	{
 		_animator.SetTrigger ("In");
 	}
+
+	private void OnDestroy ()
+	{
+		Prop.SawByPlayer -= OnPropSawByPlayer;
+		Prop.Revealed -= OnPropRevealed;
+	}
 }

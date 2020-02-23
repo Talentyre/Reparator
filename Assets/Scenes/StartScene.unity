@@ -149,7 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c704dfd90895f04aac1b18804fbb576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameMusic: {fileID: 8300000, guid: 7641234eea1310f498d5ae70a3a349da, type: 3}
+  _gameMusic: {fileID: 8300000, guid: b60b95adeae5ebb4abb02dc19815ad27, type: 3}
+  _chaseMusic: {fileID: 8300000, guid: 5035630ce276b6e49b4b815445b94485, type: 3}
 --- !u!4 &302936744
 Transform:
   m_ObjectHideFlags: 0
@@ -760,7 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8ca29be93a63c4085687d0ab3f185a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firstMusic: {fileID: 8300000, guid: 7641234eea1310f498d5ae70a3a349da, type: 3}
+  _firstMusic: {fileID: 8300000, guid: b46aa54331ace0a4c8448856ed0ed082, type: 3}
 --- !u!4 &1895400683
 Transform:
   m_ObjectHideFlags: 0

@@ -5,6 +5,8 @@ public class StateHiding : FSMState
 {
 	const float MIN_ANIMATION_MULTIPLIER = 0.6f;
 
+	public static event System.Action HideoutReached;
+
 	Prop _prop;
 	Animator _animator;
 	SpriteRenderer _spriteRenderer;
@@ -116,6 +118,7 @@ public class StateHiding : FSMState
 		_prop.CurrentHideout = _pathToFollow[_pathToFollow.Count - 1] as Hideout;
 		_prop.CurrentRoom = _prop.CurrentHideout.RelatedRoom;
 		_prop.SetTransition (Transition.FoundHideout);
+		HideoutReached?.Invoke ();
 
 		_animator.SetTrigger ("Hide");
 		_animator.SetFloat ("X", 0);

@@ -48,7 +48,13 @@ public class PlayerController : MonoBehaviour
             UpdateControls();
     }
 
-    private void UpdateControls()
+	private void OnDestroy ()
+	{
+		Prop.SawByPlayer -= DeactivateControls;
+		Prop.Revealed -= ActivateControls;
+	}
+
+	private void UpdateControls()
     {
         _movement.x = Input.GetAxis("Horizontal");
         _movement.y = Input.GetAxis("Vertical");
