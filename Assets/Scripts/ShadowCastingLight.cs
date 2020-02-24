@@ -256,7 +256,7 @@ public class ShadowCastingLight : MonoBehaviour
 		_mesh = meshCopy;
 		meshFilter.mesh = meshCopy;
 #else
-		mesh = GetComponentInChildren<MeshFilter> ().mesh;
+		_mesh = GetComponentInChildren<MeshFilter> ().mesh;
 #endif
 
 		GetInRangeObstacles ();
